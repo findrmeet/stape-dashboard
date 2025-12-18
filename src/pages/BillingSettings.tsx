@@ -1,4 +1,3 @@
-import { Zap } from "lucide-react";
 import PrimaryButton from "../components/PrimaryButton";
 import SecondaryButton from "../components/SecondaryButton";
 
@@ -16,7 +15,7 @@ const BillingSettings = () => {
       </div>
 
       {/* title */}
-      <h2 className="font-semibold text-xl mb-4"> Payment information</h2>
+      <h2 className="font-semibold text-xl mb-4">Payment information</h2>
 
       {/* subscription card */}
       <div className="primary-card border border-gray-base bg-transparent!">
@@ -38,13 +37,15 @@ const BillingSettings = () => {
         </div>
       </div>
 
-      {/* subscription card */}
+      {/* invoice information card */}
       <div className="primary-card border border-gray-base mt-4 bg-transparent!">
         <div className="primary-card-header flex gap-2 items-center font-semibold">
-          Invoice information
+          <h3>Invoice information</h3>
         </div>
         <div className="py-6">
-          Add your company name, email address and Tax ID to invoice receipts.
+          <p>
+            Add your company name, email address and Tax ID to invoice receipts.
+          </p>
         </div>
         <div className="primary-card-footer flex justify-end gap-4">
           <PrimaryButton className="bg-[#EBF0FF]! text-black px-8 text-sm font-medium">
@@ -53,13 +54,13 @@ const BillingSettings = () => {
         </div>
       </div>
 
-      {/* subscription card */}
+      {/* invoice history card */}
       <div className="primary-card border border-gray-base mt-4 bg-transparent!">
         <div className="primary-card-header flex gap-2 items-center font-semibold">
-          Invoice history
+          <h3>Invoice history</h3>
         </div>
         <div className="py-6 primary-card-footer">
-          No invoices have been generated yet.
+          <p>No invoices have been generated yet.</p>
         </div>
       </div>
     </>

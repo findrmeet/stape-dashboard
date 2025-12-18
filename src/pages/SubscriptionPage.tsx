@@ -26,12 +26,14 @@ const SubscriptionPage = () => {
           </span>
         </div>
         <div className="py-6">
-          Lorem ipsum dolor sit amet consectetur. Morbi montes ac gravida
-          pharetra nulla ullamcorper tempus sapien ultrices. Sed erat augue
-          porta morbi lorem. Facilisis nunc ultrices tellus nulla. Lorem ipsum
-          dolor sit amet consectetur. Morbi montes ac gravida pharetra nulla
-          ullamcorper tempus sapien ultrices. Sed erat augue porta morbi lorem.
-          Facilisis nunc ultrices tellus nulla.
+          <p>
+            Lorem ipsum dolor sit amet consectetur. Morbi montes ac gravida
+            pharetra nulla ullamcorper tempus sapien ultrices. Sed erat augue
+            porta morbi lorem. Facilisis nunc ultrices tellus nulla. Lorem ipsum
+            dolor sit amet consectetur. Morbi montes ac gravida pharetra nulla
+            ullamcorper tempus sapien ultrices. Sed erat augue porta morbi
+            lorem. Facilisis nunc ultrices tellus nulla.
+          </p>
         </div>
         <div className="primary-card-footer flex justify-end">
           <PrimaryButton className="bg-[#303032]! px-8 text-sm">
@@ -53,12 +55,14 @@ const SubscriptionPage = () => {
           </span>
         </div>
         <div className="py-6">
-          Lorem ipsum dolor sit amet consectetur. Morbi montes ac gravida
-          pharetra nulla ullamcorper tempus sapien ultrices. Sed erat augue
-          porta morbi lorem. Facilisis nunc ultrices tellus nulla. Lorem ipsum
-          dolor sit amet consectetur. Morbi montes ac gravida pharetra nulla
-          ullamcorper tempus sapien ultrices. Sed erat augue porta morbi lorem.
-          Facilisis nunc ultrices tellus nulla.
+          <p>
+            Lorem ipsum dolor sit amet consectetur. Morbi montes ac gravida
+            pharetra nulla ullamcorper tempus sapien ultrices. Sed erat augue
+            porta morbi lorem. Facilisis nunc ultrices tellus nulla. Lorem ipsum
+            dolor sit amet consectetur. Morbi montes ac gravida pharetra nulla
+            ullamcorper tempus sapien ultrices. Sed erat augue porta morbi
+            lorem. Facilisis nunc ultrices tellus nulla.
+          </p>
         </div>
         <div className="text-sm flex justify-between mb-2">
           <div>
