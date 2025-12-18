@@ -1,4 +1,5 @@
 import { ChevronDown } from "lucide-react";
+import TextInput from "../form/TextInput";
 
 const BillingInformation = () => {
   return (
@@ -31,11 +32,7 @@ const BillingInformation = () => {
           <label className="block text-sm text-white mb-2">
             Cardholder name <span>*</span>
           </label>
-          <input
-            type="text"
-            placeholder="Enter full name"
-            className="w-full py-3 bg-[#111318] border border-[#26272F] rounded-xl px-4 text-sm text-white placeholder-[#888888] focus:outline-none "
-          />
+          <TextInput placeholder="Enter full name" />
         </div>
 
         {/* Card number */}
@@ -43,11 +40,7 @@ const BillingInformation = () => {
           <label className="block text-sm text-white mb-2">
             Card number <span>*</span>
           </label>
-          <input
-            type="text"
-            placeholder="1234 5678 9012 3456"
-            className="w-full py-3 bg-[#111318] border border-[#26272F] rounded-xl px-4 text-sm text-white placeholder-[#888888] focus:outline-none "
-          />
+          <TextInput placeholder="1234 5678 9012 3456" />
         </div>
 
         {/* Expiry & CVC */}
@@ -56,22 +49,14 @@ const BillingInformation = () => {
             <label className="block text-sm text-white mb-2">
               Expiry <span>*</span>
             </label>
-            <input
-              type="text"
-              placeholder="MM / YY"
-              className="w-full py-3 bg-[#111318] border border-[#26272F] rounded-xl px-4 text-sm text-white placeholder-[#888888] focus:outline-none "
-            />
+            <TextInput placeholder="MM / YY" />
           </div>
 
           <div>
             <label className="block text-sm text-white mb-2">
               CVC <span>*</span>
             </label>
-            <input
-              type="text"
-              placeholder="CVC"
-              className="w-full py-3 bg-[#111318] border border-[#26272F] rounded-xl px-4 text-sm text-white placeholder-[#888888] focus:outline-none "
-            />
+            <TextInput placeholder="CVC" />
           </div>
         </div>
 
