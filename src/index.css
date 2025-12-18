@@ -1,0 +1,281 @@
+@import "tailwindcss";
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  /* primary use */
+  --color-primary-base: #ebf0ff;
+  --color-primary-muted: #ededed; /* light button bg */
+  --color-secondary-base: #0063ff;
+  --color-info-base: #111217; /* form selection color */
+  --color-blue-base: #0063ff; /* info-500 */
+  --color-info-muted: #525252;
+  --color-warning-base: #eab308;
+  --color-danger-base: #b91c1c;
+  --color-danger-muted: #ca1010;
+  --color-success-base: #10b981;
+  --color-success-muted: #00a156;
+  --color-neutral-base: #444444;
+  --color-neutral-muted: #19191f;
+  --color-black-base: #0b0c10;
+  --color-black-solid: #000000;
+  --color-black-muted: #19191c;
+  --color-gray-base: #26272f; /* border color */
+  --color-gray-muted: #181a20; /* form header color */
+
+  /* Primary Color Palette (from #EBF0FF) */
+  --color-primary-50: #fafafa; /* text color */
+  --color-primary-100: #ebf0ff;
+  --color-primary-200: #c7d4ff;
+  --color-primary-300: #a3b8ff;
+  --color-primary-400: #7f9cff;
+  --color-primary-500: #5b80ff;
+  --color-primary-600: #3764ff;
+  --color-primary-700: #0063ff;
+  --color-primary-800: #0047d1;
+  --color-primary-900: #002fa3;
+
+  /* Secondary Color Palette (from #0063FF) */
+  --color-secondary-50: #e6f0ff;
+  --color-secondary-100: #cce0ff;
+  --color-secondary-200: #99c2ff;
+  --color-secondary-300: #66a3ff;
+  --color-secondary-400: #3385ff;
+  --color-secondary-500: #0063ff;
+  --color-secondary-600: #0052d9;
+  --color-secondary-700: #0041b3;
+  --color-secondary-800: #00308c;
+  --color-secondary-900: #002066;
+
+  /* Success Color Palette (from #00B45F) */
+  --color-success-50: #e6f9f0;
+  --color-success-100: #ccf3e1;
+  --color-success-200: #99e8c3;
+  --color-success-300: #66dca5;
+  --color-success-400: #33d187;
+  --color-success-500: #00b45f;
+  --color-success-600: #009750;
+  --color-success-700: #007a41;
+  --color-success-800: #005c32;
+  --color-success-900: #003f23;
+
+  /* Warning Color Palette (from #EAB308) */
+  --color-warning-50: #fefce8;
+  --color-warning-100: #fef9c3;
+  --color-warning-200: #fef08a;
+  --color-warning-300: #fde047;
+  --color-warning-400: #facc15;
+  --color-warning-500: #eab308;
+  --color-warning-600: #ca8a04;
+  --color-warning-700: #a16207;
+  --color-warning-800: #854d0e;
+  --color-warning-900: #713f12;
+
+  /* Info Color Palette (Blue) */
+  --color-info-50: #eff6ff;
+  --color-info-100: #dbeafe;
+  --color-info-200: #bfdbfe;
+  --color-info-300: #93c5fd;
+  --color-info-400: #60a5fa;
+  --color-info-500: #3b82f6;
+  --color-info-600: #2563eb;
+  --color-info-700: #1d4ed8;
+  --color-info-800: #1e40af;
+  --color-info-900: #1e3a8a;
+
+  /* Error Color Palette (Red) */
+  --color-error-50: #fef2f2;
+  --color-error-100: #fee2e2;
+  --color-error-200: #fecaca;
+  --color-error-300: #fca5a5;
+  --color-error-400: #f87171;
+  --color-error-500: #ef4444;
+  --color-error-600: #dc2626;
+  --color-error-700: #b91c1c;
+  --color-error-800: #991b1b;
+  --color-error-900: #7f1d1d;
+
+  /* Neutral Color Palette (Gray) */
+  --color-neutral-50: #f9fafb;
+  --color-neutral-100: #f3f4f6;
+  --color-neutral-200: #e5e7eb;
+  --color-neutral-300: #d1d5db;
+  --color-neutral-400: #a1a4a5; /* text color */
+  --color-neutral-500: #888888; /* text color 3 */
+  --color-neutral-600: #4b5563;
+  --color-neutral-700: #374151;
+  --color-neutral-800: #3a3b44; /* icon color */
+  --color-neutral-900: #111827;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Theme directive for Tailwind v3.3+ */
+@theme {
+  /* primary use */
+  --color-primary-base: var(--color-primary-base);
+  --color-primary-muted: var(--color-primary-muted);
+  --color-secondary-base: var(--color-secondary-base);
+  --color-blue-base: var(--color-blue-base);
+  --color-info-base: var(--color-info-base);
+  --color-info-muted: var(--color-info-muted);
+  --color-warning-base: var(--color-warning-base);
+  --color-danger-base: var(--color-danger-base);
+  --color-danger-muted: var(--color-danger-muted);
+  --color-success-base: var(--color-success-base);
+  --color-success-muted: var(--color-success-muted);
+  --color-neutral-base: var(--color-neutral-base);
+  --color-neutral-muted: var(--color-neutral-muted);
+  --color-black-base: var(--color-black-base);
+  --color-black-solid: var(--color-black-solid);
+  --color-black-muted: var(--color-black-muted);
+  --color-gray-base: var(--color-gray-base);
+  --color-gray-muted: var(--color-gray-muted);
+
+  --color-primary-50: var(--color-primary-50);
+  --color-primary-100: var(--color-primary-100);
+  --color-primary-200: var(--color-primary-200);
+  --color-primary-300: var(--color-primary-300);
+  --color-primary-400: var(--color-primary-400);
+  --color-primary-500: var(--color-primary-500);
+  --color-primary-600: var(--color-primary-600);
+  --color-primary-700: var(--color-primary-700);
+  --color-primary-800: var(--color-primary-800);
+  --color-primary-900: var(--color-primary-900);
+
+  --color-secondary-50: var(--color-secondary-50);
+  --color-secondary-100: var(--color-secondary-100);
+  --color-secondary-200: var(--color-secondary-200);
+  --color-secondary-300: var(--color-secondary-300);
+  --color-secondary-400: var(--color-secondary-400);
+  --color-secondary-500: var(--color-secondary-500);
+  --color-secondary-600: var(--color-secondary-600);
+  --color-secondary-700: var(--color-secondary-700);
+  --color-secondary-800: var(--color-secondary-800);
+  --color-secondary-900: var(--color-secondary-900);
+
+  --color-neutral-50: var(--color-neutral-50);
+  --color-neutral-100: var(--color-neutral-100);
+  --color-neutral-200: var(--color-neutral-200);
+  --color-neutral-300: var(--color-neutral-300);
+  --color-neutral-400: var(--color-neutral-400);
+  --color-neutral-500: var(--color-neutral-500);
+  --color-neutral-600: var(--color-neutral-600);
+  --color-neutral-700: var(--color-neutral-700);
+  --color-neutral-800: var(--color-neutral-800);
+  --color-neutral-900: var(--color-neutral-900);
+
+  /* Semantic colors */
+  --color-success-50: var(--color-success-50);
+  --color-success-100: var(--color-success-100);
+  --color-success-500: var(--color-success-500);
+  --color-success-600: var(--color-success-600);
+
+  --color-warning-50: var(--color-warning-50);
+  --color-warning-100: var(--color-warning-100);
+  --color-warning-500: var(--color-warning-500);
+  --color-warning-600: var(--color-warning-600);
+
+  --color-error-50: var(--color-error-50);
+  --color-error-100: var(--color-error-100);
+  --color-error-500: var(--color-error-500);
+  --color-error-600: var(--color-error-600);
+
+  --color-info-50: var(--color-info-50);
+  --color-info-100: var(--color-info-100);
+  --color-info-500: var(--color-info-500);
+  --color-info-600: var(--color-info-600);
+}
+
+.primary-card {
+  @apply bg-black-base p-4 rounded-2xl shadow border border-gray-base;
+}
+.primary-card-header {
+  @apply text-primary-muted border-b border-gray-base pb-4 -mx-4 px-4;
+}
+
+.primary-card-footer {
+  @apply border-t border-gray-base pt-4 -mx-4 px-4;
+}
+
+.table-wrapper {
+  @apply bg-black-base rounded-2xl border border-gray-base overflow-hidden;
+}
+
+.table-header {
+  @apply border-b border-gray-base;
+}
+
+.table-title {
+  @apply text-2xl p-4 text-primary-muted font-semibold;
+}
+
+.table {
+  @apply w-full text-left;
+}
+
+.th-default {
+  @apply py-3 px-4 font-medium border-b border-gray-base;
+}
+
+.td-default {
+  @apply py-3 px-4 hover:bg-gray-400;
+}
+
+.td-status {
+  @apply py-3 px-4 space-y-0.5;
+}
+
+.td-usage {
+  @apply py-3 px-4 space-y-2;
+}
+
+.tr-border {
+  @apply border-b border-gray-base;
+}
+
+.tr-hover {
+  @apply hover:bg-gray-muted;
+}
+
+.input-default {
+  @apply w-full px-4 py-3 rounded-xl border border-gray-base bg-info-base placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-info-base transition duration-150 ease-in-out;
+}
+
+.input-default:focus,
+.shadow-base {
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.shadow-muted {
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+}
+
+.opacity-gradient {
+  /* fade from 40% → 60% opacity diagonally */
+  mask-image: linear-gradient(
+    to bottom right,
+    rgba(0, 0, 0, 0.4),
+    rgba(0, 0, 0, 0.1)
+  );
+  -webkit-mask-image: linear-gradient(
+    to bottom right,
+    rgba(0, 0, 0, 0.4),
+    rgba(0, 0, 0, 0.1)
+  );
+}
+
+/* scrollbar  */
+.scrollbar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  background-color: var(--color-black-base);
+  border-radius: 10px;
+}
