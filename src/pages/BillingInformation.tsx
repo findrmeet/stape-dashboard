@@ -1,3 +1,5 @@
+import { ChevronDown } from "lucide-react";
+
 const BillingInformation = () => {
   return (
     <div className="border border-[#1F222A] rounded-2xl ">
@@ -15,9 +17,12 @@ const BillingInformation = () => {
             Payment method <span className="text-white">*</span>
           </label>
           <div className="relative">
-            <select className="w-full py-3 bg-[#111318] border border-[#26272F] rounded-xl px-4 pr-10 text-sm text-[#A1A1AA] focus:outline-none ">
+            <select className="w-full py-3 bg-[#111318] border border-[#26272F] rounded-xl px-4 pr-10 text-sm text-[#A1A1AA] focus:outline-none appearance-none">
               <option>Credit or debit card</option>
             </select>
+            <span className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-[#A1A1AA]">
+              <ChevronDown size={16} />
+            </span>
           </div>
         </div>
 
@@ -76,9 +81,12 @@ const BillingInformation = () => {
             Country <span>*</span>
           </label>
           <div className="relative">
-            <select className="w-full py-3 bg-[#111318] border border-[#26272F] rounded-xl px-4 pr-10 text-sm text-[#888888] focus:outline-none ">
+            <select className="w-full py-3 bg-[#111318] border border-[#26272F] rounded-xl px-4 pr-10 text-sm text-[#888888] focus:outline-none appearance-none">
               <option>Search or select country</option>
             </select>
+            <span className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-[#A1A1AA]">
+              <ChevronDown size={16} />
+            </span>
           </div>
         </div>
       </div>
