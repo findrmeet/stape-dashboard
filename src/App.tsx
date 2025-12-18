@@ -1,11 +1,11 @@
-import Layout from "./components/Layout";
-import SubscriptionPage from "./components/SubscriptionPage";
+import Layout from "./layout/Layout";
+import BillingSettings from "./pages/BillingSettings";
 
 function App() {
   return (
     <>
       <Layout>
-        <SubscriptionPage />
+        <BillingSettings />
       </Layout>
     </>
   );

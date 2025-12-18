@@ -1,7 +1,7 @@
 import { Zap } from "lucide-react";
-import PrimaryButton from "./PrimaryButton";
-import ProgressBar from "./ProgressBar";
-import SecondaryButton from "./SecondaryButton";
+import PrimaryButton from "../components/PrimaryButton";
+import ProgressBar from "../components/ProgressBar";
+import SecondaryButton from "../components/SecondaryButton";
 
 const SubscriptionPage = () => {
   return (
