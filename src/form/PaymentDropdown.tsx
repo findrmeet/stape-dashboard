@@ -8,7 +8,7 @@ const PaymentDropdown = () => {
   const [value, setValue] = useState<string | null>(null);
 
   return (
-    <div className="relative w-full text-sm">
+    <section className="relative w-full text-sm">
       {/* Button */}
       <button
         type="button"
@@ -45,7 +45,7 @@ const PaymentDropdown = () => {
           ))}
         </ul>
       )}
-    </div>
+    </section>
   );
 };
 
