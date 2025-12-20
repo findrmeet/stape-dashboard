@@ -2,7 +2,6 @@ import { LucideGem } from "lucide-react";
 import { useState } from "react";
 import { PricingCard } from "./PricingCard";
 
-type BillingCycle = "monthly" | "annually";
 
 type PricingPlan = {
   title: string;
