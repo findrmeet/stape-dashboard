@@ -1,5 +1,6 @@
 import { ChevronDown } from "lucide-react";
 import TextInput from "../form/TextInput";
+import PaymentDropdown from "../form/PaymentDropdown";
 
 const BillingInformation = () => {
   return (
@@ -17,14 +18,7 @@ const BillingInformation = () => {
           <label className="block text-sm text-white mb-2">
             Payment method <span className="text-white">*</span>
           </label>
-          <div className="relative">
-            <select className="w-full py-3 bg-[#111318] border border-[#26272F] rounded-xl px-4 pr-10 text-sm text-[#A1A1AA] focus:outline-none appearance-none">
-              <option>Credit or debit card</option>
-            </select>
-            <span className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-[#A1A1AA]">
-              <ChevronDown size={16} />
-            </span>
-          </div>
+          <PaymentDropdown />
         </div>
 
         {/* Cardholder name */}
