@@ -23,27 +23,29 @@ export default function BillingSettingsSimple() {
           Billing information
         </div>
 
-        <div className="p-6">
+        <div>
           <table className="w-full text-sm">
             <thead className="text-gray-400 border-b border-[#26272F]">
               <tr>
-                <th className="text-left pb-3 font-normal">Paying as</th>
-                <th className="text-left pb-3 font-normal">Name</th>
-                <th className="text-left pb-3 font-normal">Address</th>
-                <th className="text-left pb-3 font-normal">Next payment</th>
-                <th className="text-left pb-3 font-normal">Card</th>
-                <th />
+                <th className="text-left font-normal px-6 py-4">Paying as</th>
+                <th className="text-left font-normal px-6 py-4">Name</th>
+                <th className="text-left font-normal px-6 py-4">Address</th>
+                <th className="text-left font-normal px-6 py-4">
+                  Next payment
+                </th>
+                <th className="text-left font-normal px-6 py-4">Card</th>
+                <th className="px-6" />
               </tr>
             </thead>
 
             <tbody>
               <tr className="border-b border-[#26272F]">
-                <td className="py-4">Individual</td>
-                <td className="py-4">Linden Plaza Gainza</td>
-                <td className="py-4">Spain, Pedro de Asua Kalea 55</td>
-                <td className="py-4">$24.20 on 24 Nov 2025</td>
-                <td className="py-4">Visa **** 0395</td>
-                <td className="py-4 text-right">
+                <td className="px-6 py-4">Individual</td>
+                <td className="px-6 py-4">Linden Plaza Gainza</td>
+                <td className="px-6 py-4">Spain, Pedro de Asua Kalea 55</td>
+                <td className="px-6 py-4">$24.20 on 24 Nov 2025</td>
+                <td className="px-6 py-4">Visa **** 0395</td>
+                <td className="px-6 py-4 text-right">
                   <MoreHorizontal size={16} />
                 </td>
               </tr>
@@ -58,25 +60,29 @@ export default function BillingSettingsSimple() {
           Invoice information
         </div>
 
-        <div className="p-6">
+        <div>
           <table className="w-full text-sm">
             <thead className="text-gray-400 border-b border-[#26272F]">
               <tr>
-                <th className="text-left pb-3 font-normal">Company Name</th>
-                <th className="text-left pb-3 font-normal">Company Address</th>
-                <th className="text-left pb-3 font-normal">Country</th>
-                <th className="text-left pb-3 font-normal">Tax ID</th>
-                <th />
+                <th className="text-left font-normal px-6 py-4">
+                  Company Name
+                </th>
+                <th className="text-left font-normal px-6 py-4">
+                  Company Address
+                </th>
+                <th className="text-left font-normal px-6 py-4">Country</th>
+                <th className="text-left font-normal px-6 py-4">Tax ID</th>
+                <th className="px-6" />
               </tr>
             </thead>
 
             <tbody>
               <tr className="border-b border-[#26272F]">
-                <td className="py-4">Solid Marketing Ltd.</td>
-                <td className="py-4">Kolkata, West Bengal</td>
-                <td className="py-4">India</td>
-                <td className="py-4">Sterew</td>
-                <td className="py-4 text-right">
+                <td className="px-6 py-4">Solid Marketing Ltd.</td>
+                <td className="px-6 py-4">Kolkata, West Bengal</td>
+                <td className="px-6 py-4">India</td>
+                <td className="px-6 py-4">Sterew</td>
+                <td className="px-6 py-4 text-right">
                   <MoreHorizontal size={16} />
                 </td>
               </tr>
@@ -90,10 +96,9 @@ export default function BillingSettingsSimple() {
         <div className="px-6 py-4 border-b border-[#26272F] text-sm font-medium">
           Invoice history
         </div>
-
-        <div className="p-6">
+        <div>
           {/* Filters */}
-          <div className="flex gap-4 mb-4">
+          <div className="flex gap-4 py-4 px-6">
             <div className="flex items-center gap-2 border border-[#1F222A] rounded-xl px-3 py-2">
               <Calendar size={14} />
               <input
@@ -123,9 +128,9 @@ export default function BillingSettingsSimple() {
             </select>
           </div>
 
-          {/* Rows */}
-          <div className="space-y-4">
-            <div className="grid grid-cols-[2.5fr_1fr_1.5fr_1fr] items-center text-sm border-t border-[#26272F] pt-4">
+          {/* Rows */}  
+          <div>
+            <div className="grid grid-cols-[2.5fr_1fr_1.5fr_1fr] items-center text-sm border-t border-[#26272F] py-4 px-6">
               <div>
                 <div className="font-medium">25 Oct 2025</div>
                 <div className="text-xs text-gray-400">
@@ -141,7 +146,7 @@ export default function BillingSettingsSimple() {
               </div>
             </div>
 
-            <div className="grid grid-cols-[2.5fr_1fr_1.5fr_1fr] items-center text-sm border-t border-[#26272F] pt-4">
+            <div className="grid grid-cols-[2.5fr_1fr_1.5fr_1fr] items-center text-sm border-t border-[#26272F] py-4 px-6">
               <div>
                 <div className="font-medium">25 Oct 2025</div>
                 <div className="text-xs text-gray-400">
