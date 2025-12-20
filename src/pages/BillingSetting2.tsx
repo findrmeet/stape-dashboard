@@ -17,6 +17,10 @@ export default function BillingSettingsSimple() {
     { label: "Failed", value: "failed" },
   ];
 
+  const [openAction, setOpenAction] = useState<null | "billing" | "invoice">(
+    null
+  );
+
   return (
     <div className="min-h-screen bg-black text-white p-6 space-y-6">
       {/* switching between `subscription` and `billing settings` */}
@@ -57,8 +61,42 @@ export default function BillingSettingsSimple() {
                 <td className="px-6 py-4">Spain, Pedro de Asua Kalea 55</td>
                 <td className="px-6 py-4">$24.20 on 24 Nov 2025</td>
                 <td className="px-6 py-4">Visa **** 0395</td>
-                <td className="px-6 py-4 text-right   flex justify-end">
-                  <MoreHorizontal size={16} />
+                <td className="px-6 py-4 flex justify-end relative">
+                  {/* Trigger */}
+                  <button
+                    type="button"
+                    onClick={() =>
+                      setOpenAction(openAction === "billing" ? null : "billing")
+                    }
+                    className="bg-[#111318] px-3 py-2 rounded-lg flex items-center border border-[#26272F]"
+                  >
+                    <MoreHorizontal size={16} />
+                  </button>
+
+                  {/* Dropdown */}
+                  {openAction === "billing" && (
+                    <ul className="absolute z-10 top-15 w-32 bg-[#181A20] rounded-lg shadow-lg border border-[#26272F]">
+                      <li
+                        onClick={() => {
+                          setOpenAction(null);
+                          console.log("Edit billing");
+                        }}
+                        className="px-3 py-2 bg-[#111217] hover:bg-[#3A3B44] cursor-pointer rounded-xl m-2"
+                      >
+                        Edit
+                      </li>
+
+                      <li
+                        onClick={() => {
+                          setOpenAction(null);
+                          console.log("Delete billing");
+                        }}
+                        className="px-3 py-2 bg-[#111217] hover:bg-[#3A3B44] cursor-pointer rounded-xl m-2 text-red-500"
+                      >
+                        Delete
+                      </li>
+                    </ul>
+                  )}
                 </td>
               </tr>
             </tbody>
@@ -94,8 +132,40 @@ export default function BillingSettingsSimple() {
                 <td className="px-6 py-4">Kolkata, West Bengal</td>
                 <td className="px-6 py-4">India</td>
                 <td className="px-6 py-4">Sterew</td>
-                <td className="px-6 py-4 text-right  flex justify-end">
-                  <MoreHorizontal size={16} />
+                <td className="px-6 py-4 flex justify-end relative">
+                  <button
+                    type="button"
+                    onClick={() =>
+                      setOpenAction(openAction === "invoice" ? null : "invoice")
+                    }
+                    className="bg-[#111318] px-3 py-2 rounded-lg flex items-center border border-[#26272F]"
+                  >
+                    <MoreHorizontal size={16} />
+                  </button>
+
+                  {openAction === "invoice" && (
+                    <ul className="absolute z-10 top-15 w-32 bg-[#181A20] rounded-lg shadow-lg border border-[#26272F]">
+                      <li
+                        onClick={() => {
+                          setOpenAction(null);
+                          console.log("Edit invoice");
+                        }}
+                        className="px-3 py-2 bg-[#111217] hover:bg-[#3A3B44] cursor-pointer rounded-xl m-2"
+                      >
+                        Edit
+                      </li>
+
+                      <li
+                        onClick={() => {
+                          setOpenAction(null);
+                          console.log("Delete invoice");
+                        }}
+                        className="px-3 py-2 bg-[#111217] hover:bg-[#3A3B44] cursor-pointer rounded-xl m-2 text-red-500"
+                      >
+                        Delete
+                      </li>
+                    </ul>
+                  )}
                 </td>
               </tr>
             </tbody>
@@ -119,7 +189,7 @@ export default function BillingSettingsSimple() {
               />
             </div>
 
-            <div className="min-w-[240px]">
+            <div className="min-w-60">
               <Dropdown
                 placeholder="Server"
                 value={server}
@@ -128,7 +198,7 @@ export default function BillingSettingsSimple() {
               />
             </div>
 
-            <div className="min-w-[200px]">
+            <div className="min-w-50">
               <Dropdown
                 placeholder="Payment status"
                 value={status}
