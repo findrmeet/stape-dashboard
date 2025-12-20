@@ -45,7 +45,7 @@ export default function BillingSettingsSimple() {
                 <td className="px-6 py-4">Spain, Pedro de Asua Kalea 55</td>
                 <td className="px-6 py-4">$24.20 on 24 Nov 2025</td>
                 <td className="px-6 py-4">Visa **** 0395</td>
-                <td className="px-6 py-4 text-right">
+                <td className="px-6 py-4 text-right   flex justify-end">
                   <MoreHorizontal size={16} />
                 </td>
               </tr>
@@ -72,7 +72,7 @@ export default function BillingSettingsSimple() {
                 </th>
                 <th className="text-left font-normal px-6 py-4">Country</th>
                 <th className="text-left font-normal px-6 py-4">Tax ID</th>
-                <th className="px-6" />
+                <th className="px-6"></th>
               </tr>
             </thead>
 
@@ -82,7 +82,7 @@ export default function BillingSettingsSimple() {
                 <td className="px-6 py-4">Kolkata, West Bengal</td>
                 <td className="px-6 py-4">India</td>
                 <td className="px-6 py-4">Sterew</td>
-                <td className="px-6 py-4 text-right">
+                <td className="px-6 py-4 text-right  flex justify-end">
                   <MoreHorizontal size={16} />
                 </td>
               </tr>
@@ -128,7 +128,7 @@ export default function BillingSettingsSimple() {
             </select>
           </div>
 
-          {/* Rows */}  
+          {/* Rows */}
           <div>
             <div className="grid grid-cols-[2.5fr_1fr_1.5fr_1fr] items-center text-sm border-t border-[#26272F] py-4 px-6">
               <div>
