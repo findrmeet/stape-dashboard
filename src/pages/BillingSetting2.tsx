@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { MoreHorizontal, Calendar } from "lucide-react";
 import Dropdown, { type DropdownOption } from "../form/Dropdown";
+import SecondaryButton from "../components/SecondaryButton";
 
 export default function BillingSettingsSimple() {
   const [server, setServer] = useState("");
@@ -18,14 +19,14 @@ export default function BillingSettingsSimple() {
 
   return (
     <div className="min-h-screen bg-black text-white p-6 space-y-6">
-      {/* Switch */}
-      <div className="flex gap-4">
-        <button className="px-8 py-2 rounded-xl text-gray-500 border border-[#1F222A]">
+      {/* switching between `subscription` and `billing settings` */}
+      <div className="primary-card flex gap-4 mb-6">
+        <SecondaryButton className="bg-transparent text-neutral-500 px-10 rounded-2xl! font-medium ">
           Subscription
-        </button>
-        <button className="px-8 py-2 rounded-xl bg-white text-black">
+        </SecondaryButton>
+        <SecondaryButton className="rounded-2xl! px-10 font-medium ">
           Billing settings
-        </button>
+        </SecondaryButton>
       </div>
 
       {/* Billing information */}
