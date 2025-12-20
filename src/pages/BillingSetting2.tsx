@@ -1,9 +1,20 @@
 import { useState } from "react";
 import { MoreHorizontal, Calendar } from "lucide-react";
+import Dropdown, { type DropdownOption } from "../form/Dropdown";
 
 export default function BillingSettingsSimple() {
   const [server, setServer] = useState("");
   const [status, setStatus] = useState("");
+
+  const serverOptions: DropdownOption<string>[] = [
+    { label: "Indigo Morocco Tours", value: "indigo" },
+    { label: "Atlas Desert Tours", value: "atlas" },
+  ];
+
+  const statusOptions: DropdownOption<string>[] = [
+    { label: "Paid", value: "paid" },
+    { label: "Failed", value: "failed" },
+  ];
 
   return (
     <div className="min-h-screen bg-black text-white p-6 space-y-6">
@@ -107,25 +118,23 @@ export default function BillingSettingsSimple() {
               />
             </div>
 
-            <select
-              value={server}
-              onChange={(e) => setServer(e.target.value)}
-              className="bg-transparent border border-[#1F222A] rounded-xl px-3 py-2 text-sm"
-            >
-              <option value="">Server</option>
-              <option value="indigo">Indigo Morocco Tours</option>
-              <option value="atlas">Atlas Desert Tours</option>
-            </select>
+            <div className="min-w-[240px]">
+              <Dropdown
+                placeholder="Server"
+                value={server}
+                onChange={setServer}
+                options={serverOptions}
+              />
+            </div>
 
-            <select
-              value={status}
-              onChange={(e) => setStatus(e.target.value)}
-              className="bg-transparent border border-[#1F222A] rounded-xl px-3 py-2 text-sm"
-            >
-              <option value="">Payment status</option>
-              <option value="paid">Paid</option>
-              <option value="failed">Failed</option>
-            </select>
+            <div className="min-w-[200px]">
+              <Dropdown
+                placeholder="Payment status"
+                value={status}
+                onChange={setStatus}
+                options={statusOptions}
+              />
+            </div>
           </div>
 
           {/* Rows */}
