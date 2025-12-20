@@ -1,3 +1,4 @@
+import { LucideGem } from "lucide-react";
 import { useState } from "react";
 
 export default function PricingPage() {
@@ -8,7 +9,9 @@ export default function PricingPage() {
       {/* Header */}
       <div className=" mx-auto text-center">
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#26272F] bg-[#0E0F14] text-xs text-gray-300">
-          <span>💎</span>
+          <span>
+            <LucideGem size={16} />
+          </span>
           <p>Our Pricing</p>
         </div>
 
