@@ -1,4 +1,4 @@
-import { ChevronDown } from "lucide-react";
+
 import { useState } from "react";
 import InputRadio from "../form/InputRadio";
 import Dropdown from "../form/Dropdown";
@@ -8,7 +8,7 @@ export default function InvoiceInformation() {
   const [country, setCountry] = useState<string | null>(null);
 
   return (
-    <div className="w-full rounded-2xl border border-[#1F222A] bg-transparent text-white">
+    <section className="w-full rounded-2xl border border-[#1F222A] bg-transparent text-white">
       {/* Header */}
       <div className="border-b border-[#26272F] p-6">
         <h2 className="text-base font-medium text-white">
@@ -122,6 +122,6 @@ export default function InvoiceInformation() {
           Save changes
         </button>
       </div>
-    </div>
+    </section>
   );
 }

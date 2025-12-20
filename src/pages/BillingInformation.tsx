@@ -12,7 +12,7 @@ const BillingInformation = () => {
 
   const [method, setMethod] = useState<string | null>(null);
   return (
-    <div className="border border-[#1F222A] rounded-2xl ">
+    <section className="border border-[#1F222A] rounded-2xl ">
       <div className="border-b p-6 border-[#26272F]">
         {/* Header */}
         <h2 className="text-white text-base font-medium ">
@@ -93,7 +93,7 @@ const BillingInformation = () => {
           Save changes
         </button>
       </div>
-    </div>
+    </section>
   );
 };
 
