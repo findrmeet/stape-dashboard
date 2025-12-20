@@ -1,21 +1,23 @@
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 
-const PAYMENT_METHODS = ["Credit or debit card", "PayPal", "Bank transfer"];
+const PAYMENT_METHODS = ["PayPal", "Bank transfer", "Apple Pay"];
 
 const PaymentDropdown = () => {
   const [open, setOpen] = useState(false);
-  const [value, setValue] = useState(PAYMENT_METHODS[0]);
+  const [value, setValue] = useState<string | null>(null);
 
   return (
-    <div className="relative w-full">
+    <div className="relative w-full text-sm">
       {/* Button */}
       <button
         type="button"
         onClick={() => setOpen((prev) => !prev)}
         className="w-full bg-[#111318] text-white px-3 py-2 rounded-lg flex justify-between items-center border border-[#26272F]"
       >
-        {value}
+        <span className={value ? "text-white" : "text-[#888888]"}>
+          {value ?? "Credit or debit card"}
+        </span>
 
         <span
           className={`absolute right-4 top-1/2 -translate-y-1/2 transition-transform ${
