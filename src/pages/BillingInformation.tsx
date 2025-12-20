@@ -1,8 +1,16 @@
 import { ChevronDown } from "lucide-react";
 import TextInput from "../form/TextInput";
-import PaymentDropdown from "../form/PaymentDropdown";
+import Dropdown from "../form/Dropdown";
+import { useState } from "react";
 
 const BillingInformation = () => {
+  const PAYMENT_METHODS = [
+    { label: "PayPal", value: "paypal" },
+    { label: "Bank transfer", value: "bank" },
+    { label: "Apple Pay", value: "apple" },
+  ];
+
+  const [method, setMethod] = useState<string | null>(null);
   return (
     <div className="border border-[#1F222A] rounded-2xl ">
       <div className="border-b p-6 border-[#26272F]">
@@ -18,7 +26,13 @@ const BillingInformation = () => {
           <label className="block text-sm text-white mb-2">
             Payment method <span className="text-white">*</span>
           </label>
-          <PaymentDropdown />
+          <Dropdown
+            options={PAYMENT_METHODS}
+            value={method}
+            onChange={setMethod}
+            placeholder="Credit or debit card"
+          />
+          ;
         </div>
 
         {/* Cardholder name */}

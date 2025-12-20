@@ -1,11 +1,11 @@
 import Layout from "./layout/Layout";
-import BillingInformation from "./pages/BillingInformation";
+import InvoiceInformation from "./pages/InvoiceInformation";
 
 function App() {
   return (
     <>
       <Layout>
-        <BillingInformation />
+        <InvoiceInformation />
       </Layout>
     </>
   );
