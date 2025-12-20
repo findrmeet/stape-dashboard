@@ -168,13 +168,14 @@ export default function BillingSettingsSimple() {
       {/* Invoice history */}
       <div className="border border-[#1F222A] rounded-2xl">
         <div className="px-6 py-4 border-b border-[#26272F] text-sm font-medium">
-          Invoice history
+          <h3>Invoice history</h3>
         </div>
 
         <table className="w-full text-sm">
-          {/* Filters */}
-          <thead className="border-b border-[#26272F]">
-            <tr>
+          {/* THEAD (filters + column headers) */}
+          <thead className="border-b border-[#26272F] text-gray-400">
+            {/* Filters row */}
+            <tr className="border-b border-[#26272F]">
               <th colSpan={4} className="px-6 py-4">
                 <div className="flex gap-4">
                   <div className="flex items-center gap-2 border border-[#1F222A] rounded-xl px-3 py-2">
@@ -205,24 +206,42 @@ export default function BillingSettingsSimple() {
                 </div>
               </th>
             </tr>
+
+            {/* Column headers */}
+            <tr>
+              <th className="text-left font-normal px-6 py-3">
+                <p>Invoice</p>
+              </th>
+              <th className="text-left font-normal px-6 py-3">
+                <p>Amount</p>
+              </th>
+              <th className="text-left font-normal px-6 py-3">
+                <p>Payment status</p>
+              </th>
+              <th className="px-6 py-3" />
+            </tr>
           </thead>
 
-          {/* Rows */}
+          {/* TBODY */}
           <tbody>
-            {/* Failed payment */}
+            {/* Failed */}
             <tr className="border-t border-[#26272F]">
-              <td className="px-6 py-4 w-[40%]">
-                <div className="font-medium">25 Oct 2025</div>
-                <div className="text-xs text-gray-400">
+              <td className="px-6 py-4">
+                <h4 className="font-medium">25 Oct 2025</h4>
+                <p className="text-xs text-gray-400">
                   Indigo Morocco Tours • 43FA34CS-234587
-                </div>
+                </p>
               </td>
 
-              <td className="px-6 py-4 w-[15%]">$24.20</td>
+              <td className="px-6 py-4">
+                <p>$24.20</p>
+              </td>
 
-              <td className="px-6 py-4 w-[25%] text-red-500">Payment Failed</td>
+              <td className="px-6 py-4 text-red-500">
+                <p>Payment Failed</p>
+              </td>
 
-              <td className="px-6 py-4 w-[20%] text-right">
+              <td className="px-6 py-4 text-right">
                 <button className="bg-white text-black px-4 py-2 rounded-xl">
                   Pay manually
                 </button>
@@ -231,20 +250,22 @@ export default function BillingSettingsSimple() {
 
             {/* Paid */}
             <tr className="border-t border-[#26272F]">
-              <td className="px-6 py-4 w-[40%]">
-                <div className="font-medium">25 Oct 2025</div>
-                <div className="text-xs text-gray-400">
+              <td className="px-6 py-4">
+                <h4 className="font-medium">25 Oct 2025</h4>
+                <p className="text-xs text-gray-400">
                   Indigo Morocco Tours • 43FA34CS-234587
-                </div>
+                </p>
               </td>
 
-              <td className="px-6 py-4 w-[15%]">$24.20</td>
-
-              <td className="px-6 py-4 w-[25%] text-gray-400">
-                Paid on 24 Oct 2025
+              <td className="px-6 py-4">
+                <p>$24.20</p>
               </td>
 
-              <td className="px-6 py-4 w-[20%] text-right">
+              <td className="px-6 py-4 text-gray-400">
+                <p>Paid on 24 Oct 2025</p>
+              </td>
+
+              <td className="px-6 py-4 text-right">
                 <button className="underline">Invoice receipt</button>
               </td>
             </tr>
