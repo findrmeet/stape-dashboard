@@ -22,7 +22,7 @@ export default function BillingSettingsSimple() {
   );
 
   return (
-    <div className="min-h-screen bg-black text-white p-6 space-y-6">
+    <section className="min-h-screen bg-black text-white p-6 space-y-6">
       {/* switching between `subscription` and `billing settings` */}
       <div className="primary-card flex gap-4 mb-6">
         <SecondaryButton className="bg-transparent text-neutral-500 px-10 rounded-2xl! font-medium ">
@@ -242,6 +242,6 @@ export default function BillingSettingsSimple() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
