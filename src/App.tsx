@@ -1,5 +1,5 @@
 import Layout from "./layout/Layout";
-import PricingPage from "./pages/PricingPage";
+import PricingPage from "./pages/PricingPage/PricingPage";
 
 function App() {
   return (
