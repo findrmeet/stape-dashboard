@@ -3,9 +3,7 @@ import { useState } from "react";
 import { PricingCard } from "./PricingCard";
 import type { BillingCycle, PricingPlan } from "../../types/pricing";
 import pricingPlans from "../../data/pricing-plans.json";
-// import type { PricingPlan, BillingCycle } from "@/types/pricing";
 
-// 👇 Type assertion for JSON
 const PRICING_PLANS = pricingPlans as PricingPlan[];
 
 export default function PricingPage() {
@@ -39,7 +37,7 @@ export default function PricingPage() {
         <div className="mt-8 inline-flex items-center gap-1 rounded-lg border border-[#26272F] bg-[#0E0F14] p-1">
           <button
             onClick={togglePriceToMonthly}
-            className={`px-4 py-2 text-sm rounded-md transition ${
+            className={`px-4 py-2 text-sm rounded-md transition cursor-pointer ${
               billing === "monthly" ? "bg-white text-black" : "text-gray-400"
             }`}
           >
@@ -48,7 +46,7 @@ export default function PricingPage() {
 
           <button
             onClick={togglePriceToAnnually}
-            className={`px-4 py-2 text-sm rounded-md transition ${
+            className={`px-4 py-2 text-sm rounded-md transition cursor-pointer ${
               billing === "annually" ? "bg-white text-black" : "text-gray-400"
             }`}
           >
@@ -60,18 +58,18 @@ export default function PricingPage() {
       {/* Pricing Cards */}
       <div className="mt-20 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
         {PRICING_PLANS.map((plan) => {
-          const currentPricing = plan.pricing[billing];
+          const variant = plan[billing];
 
           return (
             <PricingCard
-              key={plan.title}
-              title={plan.title}
-              badge={plan.badge}
-              highlighted={plan.highlighted}
-              price={currentPricing.price}
-              subtitle={currentPricing.subtitle}
-              description={plan.description}
-              features={plan.features}
+              key={plan.id}
+              title={variant.title}
+              badge={variant.badge}
+              highlighted={variant.highlighted}
+              price={variant.price}
+              subtitle={variant.subtitle}
+              description={variant.description}
+              features={variant.features}
             />
           );
         })}

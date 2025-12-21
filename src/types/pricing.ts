@@ -1,18 +1,17 @@
 export type BillingCycle = "monthly" | "annually";
 
-export type PricingAmount = {
+export type PricingPlanVariant = {
+  title: string;
+  description: string;
   price: string;
   subtitle: string;
+  features: string[];
+  badge?: string;
+  highlighted?: boolean;
 };
 
 export type PricingPlan = {
-  title: string;
-  badge?: string;
-  highlighted?: boolean;
-  description: string;
-  features: string[];
-  pricing: {
-    monthly: PricingAmount;
-    annually: PricingAmount;
-  };
+  id: string;
+  monthly: PricingPlanVariant;
+  annually: PricingPlanVariant;
 };
