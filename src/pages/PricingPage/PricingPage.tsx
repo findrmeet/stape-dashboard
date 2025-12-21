@@ -2,7 +2,6 @@ import { LucideGem } from "lucide-react";
 import { useState } from "react";
 import { PricingCard } from "./PricingCard";
 
-
 type PricingPlan = {
   title: string;
   badge?: string;
@@ -75,6 +74,12 @@ const PRICING_PLANS: PricingPlan[] = [
 
 export default function PricingPage() {
   const [billing, setBilling] = useState<"monthly" | "annually">("monthly");
+  const togglePriceToMonthly = () => {
+    setBilling("monthly");
+  };
+  const togglePriceToAnnually = () => {
+    setBilling("annually");
+  };
 
   return (
     <section className="bg-black text-white px-6">
@@ -97,7 +102,7 @@ export default function PricingPage() {
         {/* Toggle */}
         <div className="mt-8 inline-flex items-center gap-1 rounded-lg border border-[#26272F] bg-[#0E0F14] p-1">
           <button
-            onClick={() => setBilling("monthly")}
+            onClick={togglePriceToMonthly}
             className={`px-4 py-2 text-sm rounded-md transition  cursor-pointer ${
               billing === "monthly" ? "bg-white text-black" : "text-gray-400"
             }`}
@@ -106,7 +111,7 @@ export default function PricingPage() {
           </button>
 
           <button
-            onClick={() => setBilling("annually")}
+            onClick={togglePriceToAnnually}
             className={`px-4 py-2 text-sm rounded-md transition  cursor-pointer ${
               billing === "annually" ? "bg-white text-black" : "text-gray-400"
             }`}
