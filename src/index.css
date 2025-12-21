@@ -279,3 +279,42 @@ body {
   background-color: var(--color-black-base);
   border-radius: 10px;
 }
+
+@utility card-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: theme(borderRadius.2xl);
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: -25%;
+    top: -25%;
+    height: 150%;
+    width: 150%;
+    animation: border-spin 7s linear infinite;
+    background: conic-gradient(
+      rgba(244, 114, 182, 0.4) 0deg,
+      rgba(192, 132, 252, 0.4) 0deg,
+      transparent 100deg
+    );
+  }
+}
+
+@utility card-content {
+  position: relative;
+  z-index: 10;
+  margin: 1px;
+  border-radius: calc(theme(borderRadius.2xl) - 1px);
+  background: linear-gradient(to bottom, #0e0f14, black);
+}
+
+@theme {
+  --animate-border-spin: border-spin 7s linear infinite;
+
+  @keyframes border-spin {
+    100% {
+      transform: rotate(-360deg);
+    }
+  }
+}
