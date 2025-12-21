@@ -3,7 +3,7 @@
     "id": "free",
     "monthly": {
       "title": "Free Plan",
-      "description": "Signaly helped us recover 25% more conversions that we were missing before.",
+      "description": "Get started with essential tracking tools for small projects.",
       "price": "$0",
       "subtitle": "/ month",
       "features": [
@@ -15,14 +15,15 @@
     },
     "annually": {
       "title": "Free Plan",
-      "description": "Signaly helped us recover 25% more conversions that we were missing before.",
+      "description": "Enjoy higher limits and extended access when billed annually.",
       "price": "$0",
       "subtitle": "/ year",
       "features": [
-        "Track up to 5,000 events / year",
-        "1 Website / Store integration",
-        "Basic analytics dashboard",
-        "Community support"
+        "Track up to 75,000 events / year",
+        "2 Websites / Store integrations",
+        "Extended analytics history (12 months)",
+        "Community support",
+        "Early access to new features"
       ]
     }
   },
@@ -32,12 +33,12 @@
       "title": "Pro Plan",
       "badge": "Popular",
       "highlighted": true,
-      "description": "Signaly helped us recover 25% more conversions that we were missing before.",
+      "description": "Powerful tools for growing teams billed monthly.",
       "price": "$49",
       "subtitle": "/ month",
       "features": [
         "Unlimited tracked events",
-        "Multiple websites & stores integration",
+        "Up to 5 websites & stores",
         "Advanced reporting & funnel analysis",
         "Priority email support",
         "Team members (up to 5 users)"
@@ -47,15 +48,17 @@
       "title": "Pro Plan",
       "badge": "Popular",
       "highlighted": true,
-      "description": "Signaly helped us recover 25% more conversions that we were missing before.",
+      "description": "Best value for fast-growing teams with premium annual benefits.",
       "price": "$499",
       "subtitle": "/ year (save 15%)",
       "features": [
         "Unlimited tracked events",
-        "Multiple websites & stores integration",
+        "Up to 15 websites & stores",
         "Advanced reporting & funnel analysis",
-        "Priority email support",
-        "Team members (up to 5 users)"
+        "Priority email & chat support",
+        "Team members (up to 10 users)",
+        "Custom event retention (24 months)",
+        "Exclusive annual-only product updates"
       ]
     }
   },
@@ -63,28 +66,30 @@
     "id": "enterprise",
     "monthly": {
       "title": "Enterprise Plan",
-      "description": "Signaly helped us recover 25% more conversions that we were missing before.",
+      "description": "Flexible enterprise-grade tracking billed monthly.",
       "price": "Custom",
       "subtitle": "/ month",
       "features": [
         "Tailored event limits (millions of events)",
         "Dedicated account manager",
-        "White-label reporting for agencies",
+        "White-label reporting",
         "API access & advanced integrations",
-        "24/7 premium support"
+        "Business-hours support (Mon–Fri)"
       ]
     },
     "annually": {
       "title": "Enterprise Plan",
-      "description": "Signaly helped us recover 25% more conversions that we were missing before.",
+      "description": "Maximum scale, control, and premium services with annual billing.",
       "price": "Custom",
       "subtitle": "/ year",
       "features": [
-        "Tailored event limits (millions of events)",
-        "Dedicated account manager",
-        "White-label reporting for agencies",
-        "API access & advanced integrations",
-        "24/7 premium support"
+        "Higher tailored event limits (tens of millions)",
+        "Dedicated senior account manager",
+        "Full white-label & custom branding",
+        "Advanced API & private integrations",
+        "24/7 priority premium support",
+        "Quarterly strategy & optimization reviews",
+        "SLA-backed uptime guarantee"
       ]
     }
   }
