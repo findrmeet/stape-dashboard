@@ -15,6 +15,8 @@ export default function PricingPage() {
   const togglePriceToAnnually = () => {
     setBilling("annually");
   };
+  const [active, setActive] = useState(false);
+
   return (
     <section className="bg-black text-white px-6">
       {/* Header */}
@@ -70,6 +72,8 @@ export default function PricingPage() {
               subtitle={variant.subtitle}
               description={variant.description}
               features={variant.features}
+              active={active}
+              setActive={setActive}
             />
           );
         })}
