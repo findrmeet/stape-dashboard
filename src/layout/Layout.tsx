@@ -1,43 +1,60 @@
-import React from "react";
+import React, { useState } from "react";
 import { Outlet } from "react-router";
 
 const Layout: React.FC = () => {
+  const [open, setOpen] = useState(false);
+
   return (
-    <div className="min-h-screen grid grid-rows-[auto_1fr_auto] bg-black-solid text-primary-50 ">
+    <div className="bg-black-solid text-primary-50 flex min-h-screen flex-col">
       {/* Header */}
-      {/* Header */}
-      <header className=" items-center justify-between px-6 py-4  shadow hidden sm:flex">
-        <h1 className="text-xl font-semibold">My App</h1>
-        <nav className="space-x-4 text-sm">
+      <header className="flex items-center justify-between px-4 py-4 shadow sm:px-6">
+        <h1 className="text-lg font-semibold sm:text-xl">My App</h1>
+
+        {/* Desktop Nav */}
+        <nav className="hidden space-x-4 text-sm sm:flex">
           <button className="hover:underline">Home</button>
           <button className="hover:underline">About</button>
           <button className="hover:underline">Profile</button>
         </nav>
+
+        {/* Mobile Menu Button */}
+        <button
+          onClick={() => setOpen(!open)}
+          className="rounded-lg border border-gray-700 px-3 py-1 text-sm sm:hidden"
+        >
+          Menu
+        </button>
       </header>
 
-      {/* Main */}
-      <div className="grid grid-cols-[240px_1fr] gap-4 p-4">
+      {/* Mobile Nav */}
+      {open && (
+        <div className="space-y-2 border-b border-gray-800 px-4 py-3 text-sm sm:hidden">
+          <button className="block w-full text-left">Home</button>
+          <button className="block w-full text-left">About</button>
+          <button className="block w-full text-left">Profile</button>
+        </div>
+      )}
+
+      {/* Main Area */}
+      <div className="flex flex-1 flex-col gap-4 p-4 sm:grid sm:grid-cols-[240px_1fr]">
         {/* Sidebar */}
-        {/* Sidebar */}
-        <aside className=" rounded-2xl shadow p-4 hidden sm:block">
+        <aside className="hidden rounded-2xl p-4 shadow sm:block">
           <ul className="space-y-2 text-sm">
             <li className="font-medium">Dashboard</li>
-            <li className="">Users</li>
-            <li className="">Settings</li>
-            <li className="">Logs</li>
+            <li>Users</li>
+            <li>Settings</li>
+            <li>Logs</li>
           </ul>
         </aside>
 
         {/* Content */}
-        {/* Content */}
-        <main className=" rounded-2xl shadow p-6">
+        <main className="flex-1 rounded-2xl shadow sm:p-6">
           <Outlet />
         </main>
       </div>
 
       {/* Footer */}
-      {/* Footer */}
-      <footer className="px-6 py-3 text-xs text-center border-gray-800  border-t">
+      <footer className="border-t border-gray-800 px-4 py-3 text-center text-xs sm:px-6">
         © 2025 Dummy App. All rights reserved.
       </footer>
     </div>

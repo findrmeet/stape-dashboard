@@ -22,10 +22,10 @@ export default function UrlTabs() {
   };
 
   return (
-    <section className="text-primary-50 min-h-screen px-6 py-6">
+    <section className="text-primary-50 min-h-screen px-4 py-4 sm:px-6 sm:py-6">
       {/* Tabs Container */}
-      <div className="border-gray-base rounded-2xl border p-4">
-        <div className="flex gap-4">
+      <div className="border-gray-base rounded-2xl border p-3 sm:p-4">
+        <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
           {tabs.map((tab) => {
             const isActive = activeTab === tab.key;
 
@@ -33,7 +33,7 @@ export default function UrlTabs() {
               <SecondaryButton
                 key={tab.key}
                 onClick={changeActiveTab.bind(null, tab.key)}
-                className={`w-50 cursor-pointer ${
+                className={`h-12 w-full cursor-pointer sm:w-50 ${
                   isActive ? "" : "bg-transparent text-neutral-500 hover:text-white"
                 }`}
               >
@@ -45,7 +45,7 @@ export default function UrlTabs() {
       </div>
 
       {/* Content */}
-      <div className="mt-5">
+      <div className="mt-4 sm:mt-5">
         {activeTab === "profile" && <ProfileTab />}
         {activeTab === "security" && <SecurityTab />}
         {activeTab === "shared" && <div>Shared access content</div>}
