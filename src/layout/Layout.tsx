@@ -1,10 +1,7 @@
 import React from "react";
+import { Outlet } from "react-router";
 
-type LayoutProps = {
-  children: React.ReactNode;
-};
-
-const Layout: React.FC<LayoutProps> = ({ children }) => {
+const Layout: React.FC = () => {
   return (
     <div className="min-h-screen grid grid-rows-[auto_1fr_auto] bg-black-solid text-primary-50">
       {/* Header */}
@@ -33,7 +30,9 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
         {/* Content */}
         {/* Content */}
-        <main className=" rounded-2xl shadow p-6">{children}</main>
+        <main className=" rounded-2xl shadow p-6">
+          <Outlet />
+        </main>
       </div>
 
       {/* Footer */}
