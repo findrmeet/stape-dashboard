@@ -5,16 +5,11 @@ interface ProgressBarProps {
   height?: string; // optional, default h-2
 }
 
-const ProgressBar: React.FC<ProgressBarProps> = ({
-  progress,
-  height = "h-3",
-}) => {
+const ProgressBar: React.FC<ProgressBarProps> = ({ progress, height = "h-3" }) => {
   return (
-    <div
-      className={`w-full bg-info-base ${height} rounded-full overflow-hidden`}
-    >
+    <div className={`bg-info-base w-full ${height} overflow-hidden rounded-full`}>
       <div
-        className="bg-linear-to-r from-[#717171] to-white h-full rounded-full transition-all duration-300"
+        className="h-full rounded-full bg-linear-to-r from-[#717171] to-white transition-all duration-300"
         style={{ width: `${progress}%` }}
       ></div>
     </div>

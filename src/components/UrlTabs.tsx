@@ -16,10 +16,14 @@ export default function UrlTabs() {
     { key: "notifications", label: "Notifications" },
   ];
 
+  const changeActiveTab = (tabKey: TabKey) => {
+    setActiveTab(tabKey);
+  };
+
   return (
-    <section className="min-h-screen text-primary-50 px-6 py-6">
+    <section className="text-primary-50 min-h-screen px-6 py-6">
       {/* Tabs Container */}
-      <div className="rounded-2xl border border-gray-base  p-4 ">
+      <div className="border-gray-base rounded-2xl border p-4">
         <div className="flex gap-4">
           {tabs.map((tab) => {
             const isActive = activeTab === tab.key;
@@ -27,11 +31,9 @@ export default function UrlTabs() {
             return (
               <SecondaryButton
                 key={tab.key}
-                onClick={() => setActiveTab(tab.key)}
+                onClick={changeActiveTab.bind(null, tab.key)}
                 className={`w-50 cursor-pointer ${
-                  isActive
-                    ? ""
-                    : "bg-transparent text-neutral-500 hover:text-white"
+                  isActive ? "" : "bg-transparent text-neutral-500 hover:text-white"
                 }`}
               >
                 {tab.label}

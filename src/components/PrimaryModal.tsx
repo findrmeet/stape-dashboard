@@ -23,29 +23,21 @@ const PrimaryModal = ({ children, active, setActive, removeParent }: Props) => {
 
   return (
     <div
-      className={`fixed inset-0 z-50 flex items-center justify-center
-        bg-black-solid/30 backdrop-blur-md
-        ${active ? "opacity-100 visible" : "opacity-0 invisible"}
-        transition-opacity duration-300`}
+      className={`bg-black-solid/30 fixed inset-0 z-50 flex items-center justify-center backdrop-blur-md ${active ? "visible opacity-100" : "invisible opacity-0"} transition-opacity duration-300`}
     >
       {active && (
-        <div
-          className="relative bg-black-base border border-gray-base
-                   rounded-xl shadow-lg
-                    max-h-[90vh] max-w-[95vw] md:max-w-[90vw]
-                    overflow-y-auto"
-        >
+        <div className="bg-black-base border-gray-base relative max-h-[90vh] max-w-[95vw] overflow-y-auto rounded-xl border shadow-lg md:max-w-[90vw]">
           <button
             onClick={() => {
               setActive(false);
               removeParent?.();
             }}
-            className="cursor-pointer absolute right-4 top-4 hover:text-primary-muted transition-colors"
+            className="hover:text-primary-muted absolute top-4 right-4 cursor-pointer transition-colors"
           >
             <X />
           </button>
 
-          <div className="p-4 min-w-sm">{children}</div>
+          <div className="min-w-sm p-4">{children}</div>
         </div>
       )}
     </div>
