@@ -3,10 +3,10 @@ import { Outlet } from "react-router";
 
 const Layout: React.FC = () => {
   return (
-    <div className="min-h-screen grid grid-rows-[auto_1fr_auto] bg-black-solid text-primary-50">
+    <div className="min-h-screen grid grid-rows-[auto_1fr_auto] bg-black-solid text-primary-50 ">
       {/* Header */}
       {/* Header */}
-      <header className="flex items-center justify-between px-6 py-4  shadow">
+      <header className=" items-center justify-between px-6 py-4  shadow hidden sm:flex">
         <h1 className="text-xl font-semibold">My App</h1>
         <nav className="space-x-4 text-sm">
           <button className="hover:underline">Home</button>
@@ -19,7 +19,7 @@ const Layout: React.FC = () => {
       <div className="grid grid-cols-[240px_1fr] gap-4 p-4">
         {/* Sidebar */}
         {/* Sidebar */}
-        <aside className=" rounded-2xl shadow p-4">
+        <aside className=" rounded-2xl shadow p-4 hidden sm:block">
           <ul className="space-y-2 text-sm">
             <li className="font-medium">Dashboard</li>
             <li className="">Users</li>

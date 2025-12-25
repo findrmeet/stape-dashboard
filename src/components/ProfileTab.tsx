@@ -5,7 +5,7 @@ export default function ProfileTab() {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
       {/* LEFT */}
-      <div className="space-y-7">
+      <div className="space-y-5">
         <div className="primary-card">
           <h2 className="text-lg font-semibold mb-4 primary-card-header">
             Profile details
@@ -13,22 +13,20 @@ export default function ProfileTab() {
 
           <div className="flex gap-5 items-center">
             <img
-              className="h-20 w-20 rounded-xl overflow-hidden bg-white/10"
+              className="h-20 w-20 rounded-xl overflow-hidden"
               src="./profile.png"
             />
 
             <div className="space-y-2 text-sm">
-              <div className="flex items-center gap-2 text-white/90">
+              <div className="flex items-center gap-2">
                 ✉ rmasumreja@gmail.com
               </div>
 
-              <p className="text-white/50">
-                Account created:{" "}
-                <span className="text-white/80">Oct 20, 2023</span>
+              <p className="text-neutral-400">
+                Account created: <span>Oct 20, 2023</span>
               </p>
-              <p className="text-white/50">
-                Account shared:{" "}
-                <span className="text-white/80">with one Signaly user</span>
+              <p className="text-neutral-400">
+                Account shared: <span>with one Signaly user</span>
               </p>
             </div>
           </div>
@@ -63,10 +61,10 @@ export default function ProfileTab() {
 
           <div className="flex items-center gap-4">
             <img
-              className="h-20 w-20 rounded-xl overflow-hidden bg-white/10"
+              className="h-20 w-20 rounded-xl overflow-hidden"
               src="./profile.png"
             />
-            <p className="text-sm text-white/40">
+            <p className="text-sm text-neutral-500">
               We support PNGs, JPEGs and JPG under 2 MB
             </p>
           </div>
@@ -79,7 +77,7 @@ export default function ProfileTab() {
           <TextInput placeholder="Enter last name..." />
         </div>
 
-        <div className=" text-sm pt-4">Data processing agreement</div>
+        <div className="text-sm pt-4">Data processing agreement</div>
 
         <div className="flex justify-end mt-6 primary-card-footer">
           <SecondaryButton className="w-50 h-12 cursor-pointer">
