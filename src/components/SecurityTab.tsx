@@ -1,6 +1,7 @@
 import { Lock } from "lucide-react";
 import PrimaryButton from "./PrimaryButton";
-import SecondaryButton from "./SecondaryButton";
+// import SecondaryButton from "./SecondaryButton";
+import TextInput from "../form/TextInput";
 
 export default function SecurityTab() {
   return (
@@ -21,8 +22,9 @@ export default function SecurityTab() {
               </p>
             </div>
           </div>
-
-          <SecondaryButton className="w-50 cursor-pointer">Update</SecondaryButton>
+          <PrimaryButton className="bg-primary-base w-44 cursor-pointer text-black">
+            Configure
+          </PrimaryButton>
         </div>
 
         {/* Password + SSO */}
@@ -33,26 +35,18 @@ export default function SecurityTab() {
 
             <div>
               <label className="text-sm">Current password *</label>
-              <input
-                className="mt-1 w-full rounded-lg border border-[#1C2230] bg-[#07090D] p-3"
-                placeholder="Enter your current password..."
-              />
+              <TextInput className="mt-1" placeholder="Enter your current password..." />
             </div>
 
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
               <div>
                 <label className="text-sm">New password *</label>
-                <input
-                  className="mt-1 w-full rounded-lg border border-[#1C2230] bg-[#07090D] p-3"
-                  placeholder="Enter new password..."
-                />
+                <TextInput className="mt-1" placeholder="Enter new password..." />
               </div>
+
               <div>
                 <label className="text-sm">New password one more time *</label>
-                <input
-                  className="mt-1 w-full rounded-lg border border-[#1C2230] bg-[#07090D] p-3"
-                  placeholder="Confirm new password..."
-                />
+                <TextInput className="mt-1" placeholder="Confirm new password..." />
               </div>
             </div>
 
@@ -79,7 +73,7 @@ export default function SecurityTab() {
         </div>
 
         {/* Activity Table */}
-        <div className="primary-card overflow-x-auto rounded-2xl p-5 sm:p-6">
+        <div className="primary-card">
           <h3 className="primary-card-header mb-4 font-semibold">Activity history</h3>
 
           <table className="w-full min-w-175 text-sm">

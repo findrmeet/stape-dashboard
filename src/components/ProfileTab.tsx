@@ -1,5 +1,5 @@
 import TextInput from "../form/TextInput";
-import SecondaryButton from "./SecondaryButton";
+import PrimaryButton from "./PrimaryButton";
 
 export default function ProfileTab() {
   return (
@@ -36,7 +36,9 @@ export default function ProfileTab() {
           </div>
 
           <div className="primary-card-footer mt-6 flex justify-end">
-            <SecondaryButton className="h-12 w-50 cursor-pointer">Update</SecondaryButton>
+            <PrimaryButton className="bg-primary-base w-44 cursor-pointer text-black">
+              Update
+            </PrimaryButton>
           </div>
         </div>
       </div>
@@ -64,7 +66,9 @@ export default function ProfileTab() {
         <div className="pt-4 text-sm">Data processing agreement</div>
 
         <div className="primary-card-footer mt-6 flex justify-end">
-          <SecondaryButton className="h-12 w-50 cursor-pointer">Update</SecondaryButton>
+          <PrimaryButton className="bg-primary-base w-44 cursor-pointer text-black">
+            Update
+          </PrimaryButton>
         </div>
       </div>
     </section>
