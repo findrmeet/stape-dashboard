@@ -17,7 +17,7 @@ export default function UrlTabs() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#0A0B0F] text-white px-6 py-6">
+    <div className="min-h-screen bg-[#0A0B0F] text-primary-50 px-6 py-6">
       {/* Tabs Container */}
       <div className="rounded-2xl border border-white/10 bg-linear-to-b from-[#0E0F14] to-[#090A0E] p-2 shadow-xl">
         <div className="flex gap-2">
@@ -28,7 +28,7 @@ export default function UrlTabs() {
               <SecondaryButton
                 key={tab.key}
                 onClick={() => setActiveTab(tab.key)}
-                className={`w-[200px] cursor-pointer ${
+                className={`w-50 cursor-pointer ${
                   isActive
                     ? "bg-[#EEF2FF] text-black shadow"
                     : "bg-transparent text-white/60 hover:text-white"
