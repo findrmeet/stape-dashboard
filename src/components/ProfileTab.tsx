@@ -3,7 +3,7 @@ import SecondaryButton from "./SecondaryButton";
 
 export default function ProfileTab() {
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
+    <section className="grid grid-cols-1 lg:grid-cols-2 gap-5">
       {/* LEFT */}
       <div className="space-y-5">
         <div className="primary-card">
@@ -85,6 +85,6 @@ export default function ProfileTab() {
           </SecondaryButton>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

@@ -17,7 +17,7 @@ export default function UrlTabs() {
   ];
 
   return (
-    <div className="min-h-screen text-primary-50 px-6 py-6">
+    <section className="min-h-screen text-primary-50 px-6 py-6">
       {/* Tabs Container */}
       <div className="rounded-2xl border border-gray-base  p-4 ">
         <div className="flex gap-4">
@@ -48,6 +48,6 @@ export default function UrlTabs() {
         {activeTab === "shared" && <div>Shared access content</div>}
         {activeTab === "notifications" && <div>Notifications content</div>}
       </div>
-    </div>
+    </section>
   );
 }
