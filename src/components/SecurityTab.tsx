@@ -80,8 +80,12 @@ export default function SecurityTab() {
         {/* 2FA Banner */}
         <div className="primary-card flex flex-col gap-4 rounded-2xl p-5 sm:flex-row sm:items-center sm:justify-between sm:p-6">
           <div className="flex items-start gap-4">
-            <div className="rounded-full p-2">
-              <Lock />
+            <div className="rounded-full bg-[#26272F] p-1.5">
+              <div className="rounded-full bg-[#3A3B44] p-1.5">
+                <div className="rounded-full bg-linear-to-b from-white to-[#FFFFFF]/20 p-1.5 text-white">
+                  <Lock />
+                </div>
+              </div>
             </div>
             <div>
               <h3 className="font-semibold text-white">Two-Factor Authentication</h3>
