@@ -92,7 +92,7 @@ const tableHeaders: TableHeader[] = ["EVENT", "SOURCE", "IP", "COUNTRY", "DATE A
    Component
 --------------------------------*/
 
-export default function SecurityTab(): JSX.Element {
+export default function SecurityTab() {
   return (
     <section className="text-neutral-500">
       <div className="mx-auto space-y-6">
@@ -176,28 +176,32 @@ export default function SecurityTab(): JSX.Element {
               <table className="w-full min-w-175 text-sm">
                 <thead>
                   <tr>
-                    {tableHeaders.map((tableHeader) => (
+                    {tableHeaders?.map((tableHeader) => (
                       <th
                         key={tableHeader}
                         className="border-gray-base border-b py-3 text-left whitespace-nowrap"
                       >
-                        {tableHeader}
+                        {tableHeader ?? ""}
                       </th>
                     ))}
                   </tr>
                 </thead>
 
                 <tbody>
-                  {activityHistoryData.map((activityRecord) => (
+                  {activityHistoryData?.map((activityRecord) => (
                     <tr
-                      key={`${activityRecord.event}-${activityRecord.dateTime}`}
+                      key={`${activityRecord?.event ?? ""}-${activityRecord?.dateTime ?? ""}`}
                       className="border-b border-[#1C2230] last:border-none"
                     >
-                      <td className="py-3 whitespace-nowrap">{activityRecord.event}</td>
-                      <td className="whitespace-nowrap">{activityRecord.source}</td>
-                      <td className="whitespace-nowrap">{activityRecord.ipAddress}</td>
-                      <td className="whitespace-nowrap">{activityRecord.country}</td>
-                      <td className="whitespace-nowrap">{activityRecord.dateTime}</td>
+                      <td className="py-3 whitespace-nowrap">{activityRecord?.event ?? ""}</td>
+
+                      <td className="whitespace-nowrap">{activityRecord?.source ?? ""}</td>
+
+                      <td className="whitespace-nowrap">{activityRecord?.ipAddress ?? ""}</td>
+
+                      <td className="whitespace-nowrap">{activityRecord?.country ?? ""}</td>
+
+                      <td className="whitespace-nowrap">{activityRecord?.dateTime ?? ""}</td>
                     </tr>
                   ))}
                 </tbody>
