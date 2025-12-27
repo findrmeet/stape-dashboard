@@ -1,87 +1,83 @@
 import React, { useState } from "react";
 import { Checkbox } from "./Checkbox";
+import TextInput from "../form/TextInput";
+import AlreadyShared from "./AlreadyShared";
+import { Box, DoorOpen } from "lucide-react";
 
 const ShareTab: React.FC = () => {
   const [shareAll, setShareAll] = useState(true);
-  const [signals, setSignals] = useState(false);
+
   const [growth, setGrowth] = useState(true);
-  const [sgtm, setSgtm] = useState(false);
+
   const [test, setTest] = useState(true);
   const [billing, setBilling] = useState(true);
 
   const handleShareAllChange = (value: boolean) => {
     setShareAll(value);
-    setSignals(value);
     setGrowth(value);
-    setSgtm(value);
     setTest(value);
   };
 
   return (
-    <div className="primary-card">
-      <h2 className="primary-card-header text-lg font-semibold">Share my workspace</h2>
+    <section>
+      <div className="primary-card">
+        <h2 className="primary-card-header text-lg font-semibold">Share my workspace</h2>
 
-      <div className="grid grid-cols-1 gap-16 lg:grid-cols-2">
-        <div>
-          <label className="text-sm font-medium text-white">Signaly user email *</label>
+        <div className="grid grid-cols-1 gap-4 sm:gap-16 lg:grid-cols-2">
+          <div className="mt-6">
+            <label className="text-sm font-medium">Signaly user email *</label>
+            <TextInput placeholder="Enter your email..." className="mt-2" />
+          </div>
 
-          <input
-            type="email"
-            placeholder="Enter your email..."
-            className="mt-2 h-[48px] w-full rounded-xl border border-[#26272F] bg-[#111318] px-4 text-sm text-white placeholder-[#777] focus:outline-none"
-          />
+          <p className="leading-relaxed text-[#8A8F98] sm:mt-8 sm:text-sm">
+            The users with whom you share access will be given full access to your account and all
+            rights to manage it. You can revoke access at any time.
+          </p>
         </div>
 
-        <p className="mt-6 text-sm leading-relaxed text-[#8A8F98]">
-          The users with whom you share access will be given full access to your account and all
-          rights to manage it. You can revoke access at any time.
-        </p>
-      </div>
+        <div className="mt-8 grid grid-cols-1 gap-16 lg:grid-cols-2">
+          <div>
+            <h3 className="mb-6 text-sm font-medium">Containers & Gateways you want to share</h3>
+            <div className="mb-6 h-px w-full bg-[#26272F]" />
 
-      <div className="mt-14 grid grid-cols-1 gap-16 lg:grid-cols-2">
-        <div>
-          <h3 className="mb-6 text-sm font-medium text-white">
-            Containers & Gateways you want to share
-          </h3>
+            <div>
+              <Checkbox
+                label="Share all current and new"
+                checked={shareAll}
+                onChange={handleShareAllChange}
+              />
+              <p className="ml-9 text-xs text-[#8A8F98]">
+                If selected, shared workspace will be granted access to all existing and newly
+                created containers and gateways.
+              </p>
+              <div className="mt-5 space-y-5">
+                <div className="flex gap-3 font-semibold">
+                  <DoorOpen /> <span>Signals Gateways</span>
+                </div>
+                <Checkbox label="Growth Academy" checked={growth} onChange={setGrowth} />
+                <div className="flex gap-3 font-semibold">
+                  <Box /> <span>sGTM</span>
+                </div>
+                <Checkbox label="Test" checked={test} onChange={setTest} />
+              </div>
+            </div>
+          </div>
 
-          <div className="mb-6 h-px w-full bg-[#1C2230]" />
-
-          <div className="space-y-5">
+          <div>
+            <h3 className="mb-6 text-sm font-medium">Billing</h3>
+            <div className="mb-6 h-px w-full bg-[#26272F]" />
             <Checkbox
-              label="Share all current and new"
-              checked={shareAll}
-              onChange={handleShareAllChange}
+              label="Allow view and edit billing information"
+              checked={billing}
+              onChange={setBilling}
             />
-
-            <p className="ml-9 max-w-md text-xs text-[#6F7682]">
-              If selected, shared workspace will be granted access to all existing and newly created
-              containers and gateways.
-            </p>
-
-            <Checkbox label="Signals Gateways" checked={signals} onChange={setSignals} />
-            <Checkbox label="Growth Academy" checked={growth} onChange={setGrowth} />
-            <Checkbox label="sGTM" checked={sgtm} onChange={setSgtm} />
-            <Checkbox label="Test" checked={test} onChange={setTest} />
           </div>
         </div>
-
-        <div>
-          <h3 className="mb-6 text-sm font-medium text-white">Billing</h3>
-          <div className="mb-6 h-px w-full bg-[#1C2230]" />
-          <Checkbox
-            label="Allow view and edit billing information"
-            checked={billing}
-            onChange={setBilling}
-          />
-        </div>
       </div>
-
-      <div className="mt-14">
-        <button className="h-[46px] w-[160px] rounded-xl bg-[#EEF2FF] text-sm font-semibold text-black transition hover:brightness-105">
-          Share access
-        </button>
+      <div className="mt-4">
+        <AlreadyShared />
       </div>
-    </div>
+    </section>
   );
 };
 
