@@ -1,6 +1,8 @@
 import { Lock } from "lucide-react";
 import PrimaryButton from "./PrimaryButton";
 import TextInput from "../form/TextInput";
+import { useState } from "react";
+import TwoFactorSetup from "./TwoFactorSetup";
 
 /* -----------------------------
    Type Declarations
@@ -102,118 +104,131 @@ const tableHeaders: TableHeader[] = ["EVENT", "SOURCE", "IP", "COUNTRY", "DATE A
 --------------------------------*/
 
 export default function SecurityTab() {
-  return (
-    <section className="text-neutral-500">
-      <div className="mx-auto space-y-6">
-        {/* 2FA Banner */}
-        <div className="primary-card flex flex-col gap-4 rounded-2xl p-5 sm:flex-row sm:items-center sm:justify-between sm:p-6">
-          <div className="flex items-start gap-4">
-            <div className="rounded-full bg-[#26272F] p-1.5">
-              <div className="rounded-full bg-[#3A3B44] p-1.5">
-                <div className="rounded-full bg-linear-to-b from-white to-[#FFFFFF]/20 p-1.5 text-white">
-                  <Lock />
+  const [showTwoFactor, setShowTwoFactor] = useState<boolean>(false);
+
+  const handleConfigureClick = () => {
+    setShowTwoFactor(true);
+  };
+
+  if (!showTwoFactor)
+    return (
+      <section className="text-neutral-500">
+        <div className="mx-auto space-y-6">
+          {/* 2FA Banner */}
+          <div className="primary-card flex flex-col gap-4 rounded-2xl p-5 sm:flex-row sm:items-center sm:justify-between sm:p-6">
+            <div className="flex items-start gap-4">
+              <div className="rounded-full bg-[#26272F] p-1.5">
+                <div className="rounded-full bg-[#3A3B44] p-1.5">
+                  <div className="rounded-full bg-linear-to-b from-white to-[#FFFFFF]/20 p-1.5 text-white">
+                    <Lock />
+                  </div>
                 </div>
               </div>
-            </div>
-
-            <div>
-              <h3 className="font-semibold text-white">Two-Factor Authentication</h3>
-              <p className="text-sm">
-                Increase the security of your account by activating the two-factor authorisation
-                option. To do this you can use any of the 2FA applications such as Google
-                Authenticator, Authy, etc.
-              </p>
-            </div>
-          </div>
-
-          <PrimaryButton className="bg-primary-base w-44 cursor-pointer text-black">
-            Configure
-          </PrimaryButton>
-        </div>
-
-        {/* Password + SSO */}
-        <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
-          {/* Change Password */}
-          <div className="primary-card space-y-4 lg:col-span-2">
-            <h3 className="primary-card-header font-semibold">Change password</h3>
-
-            <div>
-              <label className="text-sm">Current password *</label>
-              <TextInput className="mt-1" placeholder="Enter your current password..." />
-            </div>
-
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-              <div>
-                <label className="text-sm">New password *</label>
-                <TextInput className="mt-1" placeholder="Enter new password..." />
-              </div>
 
               <div>
-                <label className="text-sm">New password one more time *</label>
-                <TextInput className="mt-1" placeholder="Confirm new password..." />
+                <h3 className="font-semibold text-white">Two-Factor Authentication</h3>
+                <p className="text-sm">
+                  Increase the security of your account by activating the two-factor authorisation
+                  option. To do this you can use any of the 2FA applications such as Google
+                  Authenticator, Authy, etc.
+                </p>
               </div>
             </div>
 
-            <div className="primary-card-footer flex justify-end">
-              <PrimaryButton className="w-full px-12 py-2 sm:w-auto">Update</PrimaryButton>
+            <PrimaryButton
+              className="bg-primary-base w-44 cursor-pointer text-black"
+              onClick={handleConfigureClick}
+            >
+              Configure
+            </PrimaryButton>
+          </div>
+
+          {/* Password + SSO */}
+          <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
+            {/* Change Password */}
+            <div className="primary-card space-y-4 lg:col-span-2">
+              <h3 className="primary-card-header font-semibold">Change password</h3>
+
+              <div>
+                <label className="text-sm">Current password *</label>
+                <TextInput className="mt-1" placeholder="Enter your current password..." />
+              </div>
+
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                <div>
+                  <label className="text-sm">New password *</label>
+                  <TextInput className="mt-1" placeholder="Enter new password..." />
+                </div>
+
+                <div>
+                  <label className="text-sm">New password one more time *</label>
+                  <TextInput className="mt-1" placeholder="Confirm new password..." />
+                </div>
+              </div>
+
+              <div className="primary-card-footer flex justify-end">
+                <PrimaryButton className="w-full px-12 py-2 sm:w-auto">Update</PrimaryButton>
+              </div>
+            </div>
+
+            {/* SSO */}
+            <div className="primary-card flex flex-col justify-between gap-6 rounded-2xl p-5 sm:p-6">
+              <div>
+                <h3 className="primary-card-header font-semibold">Single Sing-On (SSO)</h3>
+                <p className="mt-2 text-sm">
+                  Increase the security of your account by activating the two-factor authorisation
+                  option. To do this you can use any of the 2FA applications such as Google
+                  Authenticator, Authy, etc.
+                </p>
+              </div>
+
+              <div className="flex justify-end">
+                <PrimaryButton className="w-full px-12 py-2 sm:w-auto">Request SSO</PrimaryButton>
+              </div>
             </div>
           </div>
 
-          {/* SSO */}
-          <div className="primary-card flex flex-col justify-between gap-6 rounded-2xl p-5 sm:p-6">
-            <div>
-              <h3 className="primary-card-header font-semibold">Single Sing-On (SSO)</h3>
-              <p className="mt-2 text-sm">
-                Increase the security of your account by activating the two-factor authorisation
-                option. To do this you can use any of the 2FA applications such as Google
-                Authenticator, Authy, etc.
-              </p>
-            </div>
+          <div className="primary-card">
+            <h3 className="primary-card-header mb-4 font-semibold">Activity history</h3>
 
-            <div className="flex justify-end">
-              <PrimaryButton className="w-full px-12 py-2 sm:w-auto">Request SSO</PrimaryButton>
-            </div>
-          </div>
-        </div>
-
-        <div className="primary-card">
-          <h3 className="primary-card-header mb-4 font-semibold">Activity history</h3>
-
-          <div className="relative overflow-hidden">
-            <div className="overflow-x-auto px-5 sm:px-6">
-              <table className="w-full min-w-175 text-sm">
-                <thead>
-                  <tr>
-                    {tableHeaders?.map((tableHeader) => (
-                      <th
-                        key={tableHeader}
-                        className="border-gray-base border-b py-3 text-left whitespace-nowrap"
-                      >
-                        {tableHeader ?? ""}
-                      </th>
-                    ))}
-                  </tr>
-                </thead>
-
-                <tbody>
-                  {activityHistoryData?.map((activityRecord) => (
-                    <tr
-                      key={activityRecord?.id ?? ""}
-                      className="border-b border-[#1C2230] last:border-none"
-                    >
-                      <td className="py-3 whitespace-nowrap">{activityRecord?.event ?? ""}</td>
-                      <td className="whitespace-nowrap">{activityRecord?.source ?? ""}</td>
-                      <td className="whitespace-nowrap">{activityRecord?.ipAddress ?? ""}</td>
-                      <td className="whitespace-nowrap">{activityRecord?.country ?? ""}</td>
-                      <td className="whitespace-nowrap">{activityRecord?.dateTime ?? ""}</td>
+            <div className="relative overflow-hidden">
+              <div className="overflow-x-auto px-5 sm:px-6">
+                <table className="w-full min-w-175 text-sm">
+                  <thead>
+                    <tr>
+                      {tableHeaders?.map((tableHeader) => (
+                        <th
+                          key={tableHeader}
+                          className="border-gray-base border-b py-3 text-left whitespace-nowrap"
+                        >
+                          {tableHeader ?? ""}
+                        </th>
+                      ))}
                     </tr>
-                  ))}
-                </tbody>
-              </table>
+                  </thead>
+
+                  <tbody>
+                    {activityHistoryData?.map((activityRecord) => (
+                      <tr
+                        key={activityRecord?.id ?? ""}
+                        className="border-b border-[#1C2230] last:border-none"
+                      >
+                        <td className="py-3 whitespace-nowrap">{activityRecord?.event ?? ""}</td>
+                        <td className="whitespace-nowrap">{activityRecord?.source ?? ""}</td>
+                        <td className="whitespace-nowrap">{activityRecord?.ipAddress ?? ""}</td>
+                        <td className="whitespace-nowrap">{activityRecord?.country ?? ""}</td>
+                        <td className="whitespace-nowrap">{activityRecord?.dateTime ?? ""}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-  );
+      </section>
+    );
+  else {
+    return <TwoFactorSetup />;
+  }
 }
