@@ -5,12 +5,10 @@ import AlreadyShared from "./AlreadyShared";
 import { Box, DoorOpen } from "lucide-react";
 
 const ShareTab: React.FC = () => {
-  const [shareAll, setShareAll] = useState(true);
-
-  const [growth, setGrowth] = useState(true);
-
-  const [test, setTest] = useState(true);
-  const [billing, setBilling] = useState(true);
+  const [shareAll, setShareAll] = useState<boolean>(true);
+  const [growth, setGrowth] = useState<boolean>(true);
+  const [test, setTest] = useState<boolean>(true);
+  const [billing, setBilling] = useState<boolean>(true);
 
   const handleShareAllChange = (value: boolean) => {
     setShareAll(value);
