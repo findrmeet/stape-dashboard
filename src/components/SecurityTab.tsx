@@ -1,6 +1,5 @@
 import { Lock } from "lucide-react";
 import PrimaryButton from "./PrimaryButton";
-// import SecondaryButton from "./SecondaryButton";
 import TextInput from "../form/TextInput";
 
 export default function SecurityTab() {
