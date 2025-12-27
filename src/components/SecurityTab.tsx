@@ -2,6 +2,77 @@ import { Lock } from "lucide-react";
 import PrimaryButton from "./PrimaryButton";
 import TextInput from "../form/TextInput";
 
+/* -----------------------------
+   Fake Activity History Data
+--------------------------------*/
+const activityHistoryData = [
+  {
+    event: "Login",
+    source: "Chrome 141 on Windows 10",
+    ipAddress: "172.68.163.168",
+    country: "Bangladesh",
+    dateTime: "10/15/2025, 11:03:57 PM",
+  },
+  {
+    event: "Password Change",
+    source: "Firefox 120 on Windows 11",
+    ipAddress: "203.190.12.45",
+    country: "India",
+    dateTime: "10/14/2025, 6:18:42 PM",
+  },
+  {
+    event: "Login",
+    source: "Safari 17 on macOS",
+    ipAddress: "192.168.1.23",
+    country: "USA",
+    dateTime: "10/13/2025, 9:44:10 AM",
+  },
+  {
+    event: "Logout",
+    source: "Chrome 141 on Windows 10",
+    ipAddress: "172.68.163.168",
+    country: "Bangladesh",
+    dateTime: "10/12/2025, 10:02:31 PM",
+  },
+  {
+    event: "Two-Factor Enabled",
+    source: "Edge 119 on Windows 10",
+    ipAddress: "103.89.22.91",
+    country: "Bangladesh",
+    dateTime: "10/11/2025, 8:15:19 PM",
+  },
+  {
+    event: "Login",
+    source: "Chrome 141 on Android",
+    ipAddress: "45.251.78.11",
+    country: "Bangladesh",
+    dateTime: "10/10/2025, 7:03:56 AM",
+  },
+  {
+    event: "Session Expired",
+    source: "Chrome 141 on Windows 10",
+    ipAddress: "172.68.163.168",
+    country: "Bangladesh",
+    dateTime: "10/09/2025, 11:48:29 PM",
+  },
+  {
+    event: "Login Failed",
+    source: "Unknown Device",
+    ipAddress: "91.204.190.72",
+    country: "Russia",
+    dateTime: "10/08/2025, 4:21:02 AM",
+  },
+  {
+    event: "Password Reset",
+    source: "Chrome 141 on Windows 10",
+    ipAddress: "172.68.163.168",
+    country: "Bangladesh",
+    dateTime: "10/07/2025, 9:37:45 PM",
+  },
+];
+
+const tableHeaders = ["EVENT", "SOURCE", "IP", "COUNTRY", "DATE AND TIME"];
+
 export default function SecurityTab() {
   return (
     <section className="text-neutral-500">
@@ -78,21 +149,25 @@ export default function SecurityTab() {
           <table className="w-full min-w-175 text-sm">
             <thead>
               <tr>
-                {["EVENT", "SOURCE", "IP", "COUNTRY", "DATE AND TIME"].map((h) => (
-                  <th key={h} className="border-gray-base border-b py-3 text-left">
-                    {h}
+                {tableHeaders.map((tableHeader) => (
+                  <th key={tableHeader} className="border-gray-base border-b py-3 text-left">
+                    {tableHeader}
                   </th>
                 ))}
               </tr>
             </thead>
+
             <tbody>
-              {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((i) => (
-                <tr key={i} className="border-b border-[#1C2230] last:border-none">
-                  <td className="py-3">Login</td>
-                  <td>Chrome 141 on Windows 10</td>
-                  <td>172.68.163.168</td>
-                  <td>Bangladesh</td>
-                  <td>10/15/2025, 11:03:57 PM</td>
+              {activityHistoryData.map((activityRecord) => (
+                <tr
+                  key={`${activityRecord.event}-${activityRecord.dateTime}`}
+                  className="border-b border-[#1C2230] last:border-none"
+                >
+                  <td className="py-3">{activityRecord.event}</td>
+                  <td>{activityRecord.source}</td>
+                  <td>{activityRecord.ipAddress}</td>
+                  <td>{activityRecord.country}</td>
+                  <td>{activityRecord.dateTime}</td>
                 </tr>
               ))}
             </tbody>
