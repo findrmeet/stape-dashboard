@@ -3,9 +3,24 @@ import PrimaryButton from "./PrimaryButton";
 import TextInput from "../form/TextInput";
 
 /* -----------------------------
+   Type Declarations
+--------------------------------*/
+
+type ActivityHistoryRecord = {
+  event: string;
+  source: string;
+  ipAddress: string;
+  country: string;
+  dateTime: string;
+};
+
+type TableHeader = "EVENT" | "SOURCE" | "IP" | "COUNTRY" | "DATE AND TIME";
+
+/* -----------------------------
    Fake Activity History Data
 --------------------------------*/
-const activityHistoryData = [
+
+const activityHistoryData: ActivityHistoryRecord[] = [
   {
     event: "Login",
     source: "Chrome 141 on Windows 10",
@@ -71,9 +86,13 @@ const activityHistoryData = [
   },
 ];
 
-const tableHeaders = ["EVENT", "SOURCE", "IP", "COUNTRY", "DATE AND TIME"];
+const tableHeaders: TableHeader[] = ["EVENT", "SOURCE", "IP", "COUNTRY", "DATE AND TIME"];
 
-export default function SecurityTab() {
+/* -----------------------------
+   Component
+--------------------------------*/
+
+export default function SecurityTab(): JSX.Element {
   return (
     <section className="text-neutral-500">
       <div className="mx-auto space-y-6">
@@ -87,6 +106,7 @@ export default function SecurityTab() {
                 </div>
               </div>
             </div>
+
             <div>
               <h3 className="font-semibold text-white">Two-Factor Authentication</h3>
               <p className="text-sm">
@@ -96,6 +116,7 @@ export default function SecurityTab() {
               </p>
             </div>
           </div>
+
           <PrimaryButton className="bg-primary-base w-44 cursor-pointer text-black">
             Configure
           </PrimaryButton>
