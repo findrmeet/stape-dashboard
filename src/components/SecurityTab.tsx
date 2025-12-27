@@ -167,11 +167,10 @@ export default function SecurityTab() {
           </div>
         </div>
 
-        {/* Activity Table */}
         <div className="primary-card">
           <h3 className="primary-card-header mb-4 font-semibold">Activity history</h3>
 
-          <div className="relative -mx-5 sm:-mx-6">
+          <div className="relative overflow-hidden">
             <div className="overflow-x-auto px-5 sm:px-6">
               <table className="w-full min-w-175 text-sm">
                 <thead>
@@ -194,13 +193,9 @@ export default function SecurityTab() {
                       className="border-b border-[#1C2230] last:border-none"
                     >
                       <td className="py-3 whitespace-nowrap">{activityRecord?.event ?? ""}</td>
-
                       <td className="whitespace-nowrap">{activityRecord?.source ?? ""}</td>
-
                       <td className="whitespace-nowrap">{activityRecord?.ipAddress ?? ""}</td>
-
                       <td className="whitespace-nowrap">{activityRecord?.country ?? ""}</td>
-
                       <td className="whitespace-nowrap">{activityRecord?.dateTime ?? ""}</td>
                     </tr>
                   ))}
