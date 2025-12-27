@@ -3,6 +3,8 @@
 import { useState } from "react";
 import SecondaryButton from "./SecondaryButton";
 import AnalyticsTab from "./AnalyticsTab";
+import LogsTab from "./LogsTab";
+import StoreTab from "./StoreTab";
 
 type TabKey =
   | "details"
@@ -68,9 +70,9 @@ export default function GTMTabs() {
         {activeTab === "powerups" && <div>...</div>}
         {activeTab === "analytics" && <AnalyticsTab />}
         {activeTab === "subscription" && <div>Subscription Content</div>}
-        {activeTab === "logs" && <div>Logs Content</div>}
+        {activeTab === "logs" && <LogsTab />}
         {activeTab === "monitoring" && <div>Monitoring Content</div>}
-        {activeTab === "store" && <div>Store Content</div>}
+        {activeTab === "store" && <StoreTab />}
         {activeTab === "connections" && <div>Connections Content</div>}
         {activeTab === "uses" && <div>Uses Content</div>}
       </div>
