@@ -1,11 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import ProfileTab from "./ProfileTab";
 import SecondaryButton from "./SecondaryButton";
-import SecurityTab from "./SecurityTab";
-import ShareTab from "./ShareTab";
-import NotificationsTab from "./NotificationsTab";
+import AnalyticsTab from "./AnalyticsTab";
 
 type TabKey =
   | "details"
@@ -69,7 +66,7 @@ export default function GTMTabs() {
         {activeTab === "details" && <div>...</div>}
         {activeTab === "domain" && <div>...</div>}
         {activeTab === "powerups" && <div>...</div>}
-        {activeTab === "analytics" && <div>analytics</div>}
+        {activeTab === "analytics" && <AnalyticsTab />}
         {activeTab === "subscription" && <div>Subscription Content</div>}
         {activeTab === "logs" && <div>Logs Content</div>}
         {activeTab === "monitoring" && <div>Monitoring Content</div>}
