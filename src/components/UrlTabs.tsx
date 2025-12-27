@@ -4,6 +4,7 @@ import { useState } from "react";
 import ProfileTab from "./ProfileTab";
 import SecondaryButton from "./SecondaryButton";
 import SecurityTab from "./SecurityTab";
+import ShareTab from "./ShareTab";
 
 type TabKey = "profile" | "security" | "shared" | "notifications";
 
@@ -48,7 +49,7 @@ export default function UrlTabs() {
       <div className="mt-4 sm:mt-5">
         {activeTab === "profile" && <ProfileTab />}
         {activeTab === "security" && <SecurityTab />}
-        {activeTab === "shared" && <div>Shared access content</div>}
+        {activeTab === "shared" && <ShareTab />}
         {activeTab === "notifications" && <div>Notifications content</div>}
       </div>
     </section>
