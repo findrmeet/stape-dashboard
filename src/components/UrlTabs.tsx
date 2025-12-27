@@ -5,6 +5,7 @@ import ProfileTab from "./ProfileTab";
 import SecondaryButton from "./SecondaryButton";
 import SecurityTab from "./SecurityTab";
 import ShareTab from "./ShareTab";
+import NotificationsTab from "./NotificationsTab";
 
 type TabKey = "profile" | "security" | "shared" | "notifications";
 
@@ -50,7 +51,7 @@ export default function UrlTabs() {
         {activeTab === "profile" && <ProfileTab />}
         {activeTab === "security" && <SecurityTab />}
         {activeTab === "shared" && <ShareTab />}
-        {activeTab === "notifications" && <div>Notifications content</div>}
+        {activeTab === "notifications" && <NotificationsTab />}
       </div>
     </section>
   );
