@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
 import SecondaryButton from "./SecondaryButton";
+import Dropdown from "../form/Dropdown";
+
 
 const data = [
   { day: "1", recovered: 0.65, blocked: 0.45 },
@@ -13,7 +15,13 @@ const data = [
 ];
 
 export default function AnalyticsTab() {
-  const [enabled, setEnabled] = useState(false);
+  const [enabled, setEnabled] = useState<boolean>(false);
+  const [period, setPeriod] = useState<string>("10");
+  const periodOptions = [
+    { label: "10 days", value: "10" },
+    { label: "30 days", value: "30" },
+  ];
+
   const toggleEnabled = () => {
     if (enabled) setEnabled(false);
     else setEnabled(true);
@@ -32,7 +40,7 @@ export default function AnalyticsTab() {
           </SecondaryButton>
         </div>
 
-        <p className="mx-auto mt-6 mb-12 max-w-md text-sm text-neutral-400">
+        <p className="mx-auto mt-6 mb-12 text-sm text-neutral-400">
           The configuration steps for Signaly Analytics very depending on your sGTM setup.{" "}
           <span className="cursor-pointer text-white underline underline-offset-4 hover:opacity-80">
             Learn more
@@ -58,10 +66,14 @@ export default function AnalyticsTab() {
           <div className="space-y-8">
             <div className="mb-2 flex items-center gap-3">
               <span className="text-sm text-neutral-300">Period</span>
-              <select className="rounded-lg border border-[#26272F] bg-[#0B0D12] px-3 py-1 text-sm text-white">
-                <option>10 days</option>
-                <option>30 days</option>
-              </select>
+              <div className="w-32">
+                <Dropdown
+                  options={periodOptions}
+                  value={period}
+                  onChange={setPeriod}
+                  placeholder="Select"
+                />
+              </div>
             </div>
 
             <p className="mt-8 text-sm text-neutral-500">
