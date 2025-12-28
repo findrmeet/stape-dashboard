@@ -4,8 +4,8 @@ import Dropdown, { type DropdownOption } from "../form/Dropdown";
 import SecondaryButton from "../components/SecondaryButton";
 
 export default function BillingSettingsSimple() {
-  const [server, setServer] = useState("");
-  const [status, setStatus] = useState("");
+  const [server, setServer] = useState<string>("");
+  const [status, setStatus] = useState<string>("");
 
   const serverOptions: DropdownOption<string>[] = [
     { label: "Indigo Morocco Tours", value: "indigo" },

@@ -26,7 +26,7 @@ const Dropdown = <T,>({
   placeholder = "Select option",
   disabled = false,
 }: DropdownProps<T>) => {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState<boolean>(false);
 
   const selectedOption = options.find((opt) => opt.value === value);
 

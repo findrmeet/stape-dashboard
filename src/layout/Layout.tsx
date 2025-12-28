@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Outlet } from "react-router";
 
 const Layout: React.FC = () => {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState<boolean>(false);
 
   return (
     <div className="bg-black-solid text-primary-50 flex min-h-screen flex-col">

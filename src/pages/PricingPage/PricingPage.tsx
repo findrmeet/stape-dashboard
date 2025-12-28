@@ -15,31 +15,31 @@ export default function PricingPage() {
   const togglePriceToAnnually = () => {
     setBilling("annually");
   };
-  const [active, setActive] = useState(false);
+  const [active, setActive] = useState<boolean>(false);
 
   return (
-    <section className="bg-black text-white px-6">
+    <section className="bg-black px-6 text-white">
       {/* Header */}
       <div className="mx-auto text-center">
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#26272F] bg-[#0E0F14] text-xs text-gray-300">
+        <div className="inline-flex items-center gap-2 rounded-full border border-[#26272F] bg-[#0E0F14] px-4 py-1.5 text-xs text-gray-300">
           <LucideGem size={16} />
           <p>Our Pricing</p>
         </div>
 
-        <h1 className="mt-6 text-4xl md:text-5xl font-semibold">
+        <h1 className="mt-6 text-4xl font-semibold md:text-5xl">
           Simple pricing for every business
         </h1>
 
-        <p className="mt-4 text-sm text-gray-400 max-w-2xl mx-auto">
-          Start free, upgrade anytime. Transparent plans designed for
-          individuals, teams, and enterprises.
+        <p className="mx-auto mt-4 max-w-2xl text-sm text-gray-400">
+          Start free, upgrade anytime. Transparent plans designed for individuals, teams, and
+          enterprises.
         </p>
 
         {/* Toggle */}
         <div className="mt-8 inline-flex items-center gap-1 rounded-lg border border-[#26272F] bg-[#0E0F14] p-1">
           <button
             onClick={togglePriceToMonthly}
-            className={`px-4 py-2 text-sm rounded-md transition cursor-pointer ${
+            className={`cursor-pointer rounded-md px-4 py-2 text-sm transition ${
               billing === "monthly" ? "bg-white text-black" : "text-gray-400"
             }`}
           >
@@ -48,7 +48,7 @@ export default function PricingPage() {
 
           <button
             onClick={togglePriceToAnnually}
-            className={`px-4 py-2 text-sm rounded-md transition cursor-pointer ${
+            className={`cursor-pointer rounded-md px-4 py-2 text-sm transition ${
               billing === "annually" ? "bg-white text-black" : "text-gray-400"
             }`}
           >
@@ -58,7 +58,7 @@ export default function PricingPage() {
       </div>
 
       {/* Pricing Cards */}
-      <div className="mt-20 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="mx-auto mt-20 grid max-w-7xl grid-cols-1 gap-8 md:grid-cols-3">
         {PRICING_PLANS.map((plan) => {
           const variant = plan[billing];
 
