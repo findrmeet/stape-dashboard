@@ -14,7 +14,10 @@ const data = [
 
 export default function AnalyticsTab() {
   const [enabled, setEnabled] = useState(false);
-
+  const toggleEnabled = () => {
+    if (enabled) setEnabled(false);
+    else setEnabled(true);
+  };
   if (!enabled) {
     return (
       <div className="primary-card mt-4 text-center shadow-inner">
@@ -22,7 +25,7 @@ export default function AnalyticsTab() {
 
         <div className="mt-6 flex justify-center">
           <SecondaryButton
-            onClick={() => setEnabled(true)}
+            onClick={toggleEnabled}
             className="h-11 cursor-pointer rounded-xl bg-[#EEF2FF] px-6 text-sm text-black shadow-lg hover:bg-white"
           >
             Turn on Analytics
@@ -41,44 +44,73 @@ export default function AnalyticsTab() {
 
   return (
     <div className="primary-card mt-4 space-y-6 shadow-inner">
-      <div className="rounded-2xl border border-[#26272F] bg-[#0E1015] p-6">
-        <div className="mb-4 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <p className="text-sm text-neutral-300">Period</p>
-            <select className="rounded-lg border border-[#26272F] bg-[#0B0D12] px-3 py-1 text-sm text-white">
-              <option>10 days</option>
-              <option>30 days</option>
-            </select>
+      {/* Top notice */}
+      <div className="primary-card text-sm text-neutral-500">
+        Please hold on, we need some time to collect the data after you enable Analytics. <br />
+        This process can take up to 48 hours.
+      </div>
+
+      {/* Main Analytics Card */}
+      <div className="primary-card flex justify-between">
+        <div className="mb-6">
+          <div>
+            <div className="mb-2 flex items-center gap-3">
+              <span className="text-sm text-neutral-300">Period</span>
+              <select className="rounded-lg border border-[#26272F] bg-[#0B0D12] px-3 py-1 text-sm text-white">
+                <option>10 days</option>
+                <option>30 days</option>
+              </select>
+            </div>
+
+            <p className="text-xs text-neutral-500">
+              Number of recovered requests from ad blockers and browsers with tracking preventions
+              over the selected period of time.{" "}
+              <span className="cursor-pointer text-white underline underline-offset-4">
+                Learn more
+              </span>
+            </p>
+
+            <div className="mt-4 space-y-2 text-sm">
+              <p className="text-neutral-400">Total requests: -</p>
+              <div className="flex items-center gap-2 text-neutral-400">
+                <span className="h-2 w-2 rounded-full bg-green-500" />
+                Recovered from ad blockers: -
+              </div>
+              <div className="flex items-center gap-2 text-neutral-400">
+                <span className="h-2 w-2 rounded-full bg-red-500" />
+                Recovered from tracking prevention: -
+              </div>
+            </div>
           </div>
         </div>
 
-        <div className="h-64 w-full">
+        <div className="h-64 w-[50%]">
           <ResponsiveContainer width="100%" height="100%">
             <AreaChart data={data}>
               <XAxis dataKey="day" hide />
-              <YAxis hide domain={[0, 1]} />
+              <YAxis domain={[0, 1]} />
               <Tooltip />
               <Area
                 type="monotone"
                 dataKey="recovered"
                 stroke="#22C55E"
+                strokeWidth={1.5}
                 fill="url(#green)"
-                strokeWidth={2}
               />
               <Area
                 type="monotone"
                 dataKey="blocked"
                 stroke="#EF4444"
+                strokeWidth={1.5}
                 fill="url(#red)"
-                strokeWidth={2}
               />
               <defs>
                 <linearGradient id="green" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stopColor="#22C55E" stopOpacity={0.5} />
+                  <stop offset="0%" stopColor="#22C55E" stopOpacity={0.35} />
                   <stop offset="100%" stopColor="#22C55E" stopOpacity={0} />
                 </linearGradient>
                 <linearGradient id="red" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stopColor="#EF4444" stopOpacity={0.5} />
+                  <stop offset="0%" stopColor="#EF4444" stopOpacity={0.35} />
                   <stop offset="100%" stopColor="#EF4444" stopOpacity={0} />
                 </linearGradient>
               </defs>
@@ -87,20 +119,33 @@ export default function AnalyticsTab() {
         </div>
       </div>
 
-      <div className="rounded-2xl border border-[#26272F] bg-[#0E1015] p-10 text-center text-sm text-neutral-500">
-        Nothing to show, nothing to see
-      </div>
-
-      <div className="rounded-2xl border border-[#26272F] bg-[#0E1015] p-10 text-center text-sm text-neutral-500">
-        Nothing to show, nothing to see
-      </div>
-
-      <div className="rounded-2xl border border-[#26272F] bg-[#0E1015] p-10 text-center">
-        <p className="mb-3 text-sm text-white">Prefer not to use Signaly Analytics?</p>
-        <p className="mb-5 text-xs text-neutral-400">
-          You can turn it off for this container. Additional steps may be required.
+      {/* Empty Sections */}
+      <div className="primary-card">
+        <h1 className="primary-card-header text-primary-muted text-lg font-semibold">
+          Requests by client
+        </h1>
+        <p className="py-20 text-center text-sm text-neutral-500">
+          Nothing to show, nothing to see
         </p>
-        <SecondaryButton className="h-10 rounded-xl bg-white px-6 text-sm text-black shadow-lg hover:bg-neutral-200">
+      </div>
+
+      <div className="primary-card">
+        <h1 className="primary-card-header text-primary-muted text-lg font-semibold">
+          Requests by client
+        </h1>
+        <p className="py-20 text-center text-sm text-neutral-500">
+          Nothing to show, nothing to see
+        </p>
+      </div>
+
+      {/* Footer Action */}
+      <div className="primary-card text-center">
+        <p className="mt-14 mb-2 text-sm text-white">Prefer not to use Signaly Analytics?</p>
+        <p className="mb-5 text-xs text-neutral-400">
+          You can turn it off for this container. Additional steps may be required.{" "}
+          <span className="cursor-pointer text-white underline underline-offset-4">Learn more</span>
+        </p>
+        <SecondaryButton className="mb-14 h-10 rounded-xl bg-white px-6 text-sm text-black shadow-lg hover:bg-neutral-200">
           Turn off Analytics
         </SecondaryButton>
       </div>

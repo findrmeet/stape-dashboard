@@ -3,7 +3,7 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import { createBrowserRouter } from "react-router";
 import { RouterProvider } from "react-router/dom";
-import UrlTabs from "./components/UrlTabs.tsx";
+
 import Layout from "./layout/Layout.tsx";
 import GTMTabs from "./components/GTMTabs.tsx";
 
