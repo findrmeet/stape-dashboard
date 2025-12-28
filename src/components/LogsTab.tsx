@@ -14,6 +14,10 @@ export default function LogsTab() {
     setShowResults(false);
   };
 
+  const handleLogViewClick = (view: LogView) => {
+    changeLogView(view);
+  };
+
   const showLogs = () => {
     setShowResults(true);
   };
@@ -27,6 +31,8 @@ export default function LogsTab() {
       "Response logs display the response received by the server from Facebook, TikTok, etc. platforms. This only works if you use Signaly tags for these platforms.",
     other: "Logs that we can't categorize. For example, created by Signaly Logger tag.",
   };
+
+  const logViews: LogView[] = ["access", "request", "response", "other"];
 
   return (
     <>
@@ -42,25 +48,27 @@ export default function LogsTab() {
           </p>
 
           <div className="flex items-center gap-6 text-sm">
-            {(["access", "request", "response", "other"] as LogView[]).map((view) => (
-              <span
-                key={view}
-                onClick={changeLogView.bind(null, view)}
-                className={`cursor-pointer ${
-                  activeLogView === view
-                    ? "font-medium text-white"
-                    : "text-neutral-400 hover:text-white"
-                }`}
-              >
-                {view === "access"
-                  ? "Access Logs"
-                  : view === "request"
-                    ? "Request Logs"
-                    : view === "response"
-                      ? "Response Logs"
-                      : "Other Logs"}
-              </span>
-            ))}
+            {logViews.map((view) => {
+              const isActive = activeLogView === view;
+
+              return (
+                <span
+                  key={view}
+                  onClick={() => handleLogViewClick(view)}
+                  className={`cursor-pointer ${
+                    isActive ? "font-medium text-white" : "text-neutral-400 hover:text-white"
+                  }`}
+                >
+                  {view === "access"
+                    ? "Access Logs"
+                    : view === "request"
+                      ? "Request Logs"
+                      : view === "response"
+                        ? "Response Logs"
+                        : "Other Logs"}
+                </span>
+              );
+            })}
           </div>
         </div>
 

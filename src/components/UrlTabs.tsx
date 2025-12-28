@@ -21,6 +21,10 @@ export default function UrlTabs() {
     setActiveTab(tabKey);
   };
 
+  const handleTabClick = (tabKey: TabKey) => {
+    changeActiveTab(tabKey);
+  };
+
   return (
     <section className="text-primary-50 min-h-screen px-4 py-4 sm:px-6 sm:py-6">
       {/* Tabs Container */}
@@ -32,7 +36,7 @@ export default function UrlTabs() {
             return (
               <SecondaryButton
                 key={tab.key}
-                onClick={changeActiveTab.bind(null, tab.key)}
+                onClick={() => handleTabClick(tab.key)}
                 className={`h-12 w-full cursor-pointer sm:w-50 ${
                   isActive ? "" : "bg-transparent text-neutral-500 hover:text-white"
                 }`}

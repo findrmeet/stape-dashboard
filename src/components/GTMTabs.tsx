@@ -31,11 +31,15 @@ export default function GTMTabs() {
     { key: "monitoring", label: "Monitoring" },
     { key: "store", label: "Store" },
     { key: "connections", label: "Connections" },
-    { key: "uses", label: "Uses" },
+    { key: "uses", label: "Usage" },
   ];
 
   const changeActiveTab = (tabKey: TabKey) => {
     setActiveTab(tabKey);
+  };
+
+  const handleTabClick = (tabKey: TabKey) => {
+    changeActiveTab(tabKey);
   };
 
   return (
@@ -49,7 +53,7 @@ export default function GTMTabs() {
             return (
               <SecondaryButton
                 key={tab.key}
-                onClick={changeActiveTab.bind(null, tab.key)}
+                onClick={() => handleTabClick(tab.key)}
                 className={`h-11 w-full cursor-pointer rounded-xl bg-transparent px-6 text-sm transition-all sm:w-34 ${
                   isActive
                     ? "bg-white text-black shadow-lg"
