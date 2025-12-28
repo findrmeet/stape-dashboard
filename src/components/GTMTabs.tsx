@@ -5,6 +5,7 @@ import SecondaryButton from "./SecondaryButton";
 import AnalyticsTab from "./AnalyticsTab";
 import LogsTab from "./LogsTab";
 import StoreTab from "./StoreTab";
+import ConnectionsTab from "./ConnectionsTab";
 
 type TabKey =
   | "details"
@@ -73,7 +74,7 @@ export default function GTMTabs() {
         {activeTab === "logs" && <LogsTab />}
         {activeTab === "monitoring" && <div>Monitoring Content</div>}
         {activeTab === "store" && <StoreTab />}
-        {activeTab === "connections" && <div>Connections Content</div>}
+        {activeTab === "connections" && <ConnectionsTab />}
         {activeTab === "uses" && <div>Uses Content</div>}
       </div>
     </section>
