@@ -5,7 +5,7 @@ import SecondaryButton from "./SecondaryButton";
 import AnalyticsTab from "./AnalyticsTab";
 import LogsTab from "./LogsTab";
 import StoreTab from "./StoreTab";
-import ConnectionsTab from "./ConnectionsTab";
+import ConnectionsTab from "./ConnectionsTab/ConnectionsTab";
 
 type TabKey =
   | "details"

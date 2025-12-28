@@ -1,73 +1,11 @@
 "use client";
 
-import PrimaryButton from "./PrimaryButton";
-
-const Section = ({
-  title,
-  description,
-  children,
-}: {
-  title: string;
-  description: string;
-  children: React.ReactNode;
-}) => {
-  return (
-    <div className="primary-card mb-6 rounded-2xl shadow-inner">
-      <div className="border-b border-neutral-800 p-5">
-        <h3 className="text-sm font-medium text-white">{title}</h3>
-      </div>
-
-      <div className="p-5">
-        <p className="mb-5 max-w-4xl text-sm text-neutral-400">{description}</p>
-
-        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {children}
-        </div>
-      </div>
-    </div>
-  );
-};
-
-const Card = ({
-  logo,
-  title,
-  description,
-  primary,
-}: {
-  logo: string; // now image path
-  title: string;
-  description: string;
-  primary: string;
-}) => {
-  return (
-    <div className="flex flex-col justify-between rounded-xl border border-neutral-800 bg-[#0E1015] p-5">
-      <div className="space-y-4">
-        <div className="h-10">
-          <img src={logo} alt={title} className="h-full object-contain" />
-        </div>
-
-        <h4 className="text-lg font-semibold text-white">{title}</h4>
-
-        <p className="text-sm text-neutral-400">{description}</p>
-      </div>
-
-      <div className="mt-6 space-y-3">
-        <PrimaryButton className="w-full border border-neutral-700 bg-transparent text-neutral-300 hover:border-neutral-500">
-          Learn more
-        </PrimaryButton>
-
-        <PrimaryButton className="w-full bg-white text-black hover:bg-white">
-          {primary}
-        </PrimaryButton>
-      </div>
-    </div>
-  );
-};
+import { Card } from "./Card";
+import { Section } from "./Section";
 
 export default function ConnectionsTab() {
   return (
     <div className="mt-4 space-y-6">
-      {/* Authentifications */}
       {/* Authentifications */}
       <Section
         title="Authentifications"
@@ -78,6 +16,7 @@ export default function ConnectionsTab() {
           title="Microsoft Advertising"
           description="For setting up the server GTM tag for Microsoft ads."
           primary="Sign in"
+          auth
         />
 
         <Card
@@ -85,6 +24,7 @@ export default function ConnectionsTab() {
           title="Google Sheets"
           description="Read/Write data from sGTM to Google Sheets."
           primary="Sign in"
+          auth
         />
 
         <Card
@@ -92,6 +32,7 @@ export default function ConnectionsTab() {
           title="Google Ads"
           description="Embrace the power of Offline Conversions."
           primary="Sign in"
+          auth
         />
       </Section>
 
