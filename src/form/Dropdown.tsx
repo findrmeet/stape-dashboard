@@ -57,7 +57,7 @@ const Dropdown = <T,>({
       {/* Dropdown */}
       {open && !disabled && (
         <ul className="absolute z-10 mt-2 w-full bg-[#181A20] rounded-lg shadow-lg border border-[#26272F]">
-          {options.map((option) => (
+          {options?.map((option) => (
             <li
               key={String(option.value)}
               onClick={() => {

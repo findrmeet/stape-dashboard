@@ -30,7 +30,7 @@ export default function UrlTabs() {
       {/* Tabs Container */}
       <div className="border-gray-base rounded-2xl border p-3 sm:p-4">
         <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
-          {tabs.map((tab) => {
+          {tabs?.map((tab) => {
             const isActive = activeTab === tab.key;
 
             return (

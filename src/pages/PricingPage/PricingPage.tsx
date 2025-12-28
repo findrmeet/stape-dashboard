@@ -59,7 +59,7 @@ export default function PricingPage() {
 
       {/* Pricing Cards */}
       <div className="mx-auto mt-20 grid max-w-7xl grid-cols-1 gap-8 md:grid-cols-3">
-        {PRICING_PLANS.map((plan) => {
+        {PRICING_PLANS?.map((plan) => {
           const variant = plan[billing];
 
           return (

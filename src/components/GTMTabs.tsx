@@ -47,7 +47,7 @@ export default function GTMTabs() {
       {/* Tabs */}
       <div className="rounded-2xl border border-[#22252E] bg-[#0B0D12] p-2">
         <div className="flex flex-wrap gap-2">
-          {tabs.map((tab) => {
+          {tabs?.map((tab) => {
             const isActive = activeTab === tab.key;
 
             return (

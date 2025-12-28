@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Card } from "./Card";
 import { Section } from "./Section";
+import { Loader } from "./Loader";
 
 type CardData = {
   logo: string;
@@ -18,12 +19,21 @@ type SectionData = {
 
 export default function ConnectionsTab() {
   const [sections, setSections] = useState<SectionData[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetch("./connections.json")
       .then((res) => res.json())
-      .then((data) => setSections(data));
+      .then((data) => {
+        setSections(data);
+        setLoading(false);
+      })
+      .catch(() => setLoading(false));
   }, []);
+
+  if (loading) {
+    return <Loader />;
+  }
 
   return (
     <div className="mt-4 space-y-6">

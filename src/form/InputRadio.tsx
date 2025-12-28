@@ -50,7 +50,7 @@ const InputRadio = React.forwardRef<HTMLInputElement, InputRadioProps>(
         )}
 
         <div className="flex items-center gap-6">
-          {options.map((option, index) => {
+          {options?.map((option, index) => {
             const isSelected = value === option.value;
             const isDisabled = option.disabled;
 

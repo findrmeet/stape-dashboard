@@ -48,7 +48,7 @@ export default function LogsTab() {
           </p>
 
           <div className="flex items-center gap-6 text-sm">
-            {logViews.map((view) => {
+            {logViews?.map((view) => {
               const isActive = activeLogView === view;
 
               return (

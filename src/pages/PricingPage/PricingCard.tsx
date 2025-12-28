@@ -64,7 +64,7 @@ export function PricingCard({
             <div className="mt-8">
               <h4 className="text-sm font-medium mb-4">Included Features:</h4>
               <ul className="space-y-3">
-                {features.map((item) => (
+                {features?.map((item) => (
                   <li key={item} className="flex items-start gap-2 text-sm">
                     <span className="text-white">
                       <LucideCheck size={20} />
