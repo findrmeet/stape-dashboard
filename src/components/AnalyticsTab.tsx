@@ -46,14 +46,16 @@ export default function AnalyticsTab() {
     <div className="primary-card mt-4 space-y-6 shadow-inner">
       {/* Top notice */}
       <div className="primary-card text-sm text-neutral-500">
-        Please hold on, we need some time to collect the data after you enable Analytics. <br />
-        This process can take up to 48 hours.
+        <p>
+          Please hold on, we need some time to collect the data after you enable Analytics. <br />
+          This process can take up to 48 hours.
+        </p>
       </div>
 
       {/* Main Analytics Card */}
-      <div className="primary-card flex justify-between">
+      <div className="primary-card justify-between sm:flex">
         <div className="mb-6">
-          <div>
+          <div className="space-y-8">
             <div className="mb-2 flex items-center gap-3">
               <span className="text-sm text-neutral-300">Period</span>
               <select className="rounded-lg border border-[#26272F] bg-[#0B0D12] px-3 py-1 text-sm text-white">
@@ -62,7 +64,7 @@ export default function AnalyticsTab() {
               </select>
             </div>
 
-            <p className="text-xs text-neutral-500">
+            <p className="mt-8 text-sm text-neutral-500">
               Number of recovered requests from ad blockers and browsers with tracking preventions
               over the selected period of time.{" "}
               <span className="cursor-pointer text-white underline underline-offset-4">
@@ -83,12 +85,19 @@ export default function AnalyticsTab() {
             </div>
           </div>
         </div>
-
-        <div className="h-64 w-[50%]">
+        {/*  ====== chart ====== */}
+        <div className="h-64 sm:w-[50%]">
           <ResponsiveContainer width="100%" height="100%">
             <AreaChart data={data}>
               <XAxis dataKey="day" hide />
-              <YAxis domain={[0, 1]} />
+              <YAxis
+                domain={[0, 1]}
+                ticks={[0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]}
+                tickFormatter={(value) => value.toFixed(1)}
+                tick={{ fill: "#6B7280", fontSize: 12 }}
+                axisLine={false}
+                tickLine={false}
+              />
               <Tooltip />
               <Area
                 type="monotone"
@@ -145,7 +154,10 @@ export default function AnalyticsTab() {
           You can turn it off for this container. Additional steps may be required.{" "}
           <span className="cursor-pointer text-white underline underline-offset-4">Learn more</span>
         </p>
-        <SecondaryButton className="mb-14 h-10 rounded-xl bg-white px-6 text-sm text-black shadow-lg hover:bg-neutral-200">
+        <SecondaryButton
+          onClick={toggleEnabled}
+          className="mb-14 h-10 cursor-pointer rounded-xl bg-white px-6 text-sm text-black shadow-lg hover:bg-neutral-200"
+        >
           Turn off Analytics
         </SecondaryButton>
       </div>
