@@ -3,10 +3,9 @@ import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer } from "rec
 import SecondaryButton from "./SecondaryButton";
 import Dropdown from "../form/Dropdown";
 
-
 const data = [
   { day: "1", recovered: 0.65, blocked: 0.45 },
-  { day: "2", recovered: 0.92, blocked: 0.32 },
+  { day: "2", recovered: 0.93, blocked: 0.32 },
   { day: "3", recovered: 0.74, blocked: 0.46 },
   { day: "4", recovered: 0.78, blocked: 0.58 },
   { day: "5", recovered: 0.71, blocked: 0.35 },
@@ -105,11 +104,15 @@ export default function AnalyticsTab() {
               <YAxis
                 domain={[0, 1]}
                 ticks={[0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]}
+                allowDataOverflow
+                interval={0}
+                padding={{ top: 10, bottom: 10 }}
                 tickFormatter={(value) => value.toFixed(1)}
                 tick={{ fill: "#6B7280", fontSize: 12 }}
                 axisLine={false}
                 tickLine={false}
               />
+
               <Tooltip />
               <Area
                 type="monotone"
