@@ -1,4 +1,6 @@
 import { CalendarClock, Gift } from "lucide-react";
+import ProgressBar from "../ProgressBar";
+// import ProgressBar from "./ProgressBar";
 
 type UsageTabHeaderProps = {
   used: number;
@@ -28,12 +30,7 @@ export default function UsageTabHeader({ used, total }: UsageTabHeaderProps) {
 
           {/* Progress bar */}
           <div className="mt-5">
-            <div className="relative h-[12px] w-full overflow-hidden rounded-full bg-[#14161C]">
-              <div
-                className="absolute top-0 left-0 h-full rounded-full bg-white transition-all duration-700 ease-out"
-                style={{ width: `${percent}%` }}
-              />
-            </div>
+            <ProgressBar progress={percent} height="h-[12px]" />
           </div>
         </div>
 
