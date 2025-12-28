@@ -2,6 +2,7 @@ import { useState } from "react";
 import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
 import SecondaryButton from "./SecondaryButton";
 import Dropdown from "../form/Dropdown";
+import { CustomTooltip } from "./CustomTooltip";
 
 const data = [
   { day: "1", recovered: 0.65, blocked: 0.45 },
@@ -112,8 +113,8 @@ export default function AnalyticsTab() {
                 axisLine={false}
                 tickLine={false}
               />
+              <Tooltip content={<CustomTooltip />} cursor={{ stroke: "#26272F", strokeWidth: 1 }} />
 
-              <Tooltip />
               <Area
                 type="monotone"
                 dataKey="recovered"
