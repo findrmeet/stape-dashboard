@@ -1,5 +1,3 @@
-"use client";
-
 import SecondaryButton from "./SecondaryButton";
 
 export default function AnalyticsTab() {

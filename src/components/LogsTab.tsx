@@ -1,5 +1,3 @@
-"use client";
-
 import { useState } from "react";
 import SecondaryButton from "./SecondaryButton";
 import TextInput from "../form/TextInput";

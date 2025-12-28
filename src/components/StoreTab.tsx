@@ -1,5 +1,3 @@
-"use client";
-
 import SecondaryButton from "./SecondaryButton";
 import TextInput from "../form/TextInput";
 
@@ -56,7 +54,7 @@ export default function StoreTab() {
 
         {/* Main panel */}
         <div className="flex flex-1 items-center justify-center px-4 text-sm text-neutral-500">
-          Nothing to show, nothing to see
+          <p>Nothing to show, nothing to see</p>
         </div>
       </div>
     </div>

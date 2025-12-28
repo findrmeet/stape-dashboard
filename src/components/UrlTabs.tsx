@@ -1,5 +1,3 @@
-"use client";
-
 import { useState } from "react";
 import ProfileTab from "./ProfileTab";
 import SecondaryButton from "./SecondaryButton";

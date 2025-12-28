@@ -1,5 +1,3 @@
-"use client";
-
 import { ArrowDownToLine, ChevronRight } from "lucide-react";
 
 type LogRecord = {
