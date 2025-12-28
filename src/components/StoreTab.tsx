@@ -36,7 +36,7 @@ export default function StoreTab() {
       </div>
 
       {/* Content */}
-      <div className="flex min-h-[420px]">
+      <div className="flex min-h-105">
         {/* Left panel */}
         <div className="border-gray-base w-72 border-r p-6">
           <div className="flex flex-col gap-4 text-sm">
