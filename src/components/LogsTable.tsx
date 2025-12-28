@@ -41,7 +41,7 @@ export default function LogsTable() {
       {/* Table */}
       <div className="overflow-x-auto">
         <table className="w-full text-left text-sm">
-          <thead className="border-b border-[#22252E] text-neutral-400">
+          <thead className="border-gray-base border-b text-neutral-400">
             <tr>
               <th className="px-6 py-3">Date</th>
               <th className="px-6 py-3">Status</th>
@@ -53,13 +53,13 @@ export default function LogsTable() {
           </thead>
 
           <tbody>
-            {fakeLogs.map((log) => (
-              <tr key={log.id} className="border-b border-[#22252E] last:border-0">
-                <td className="px-6 py-4 text-neutral-300">{log.date}</td>
-                <td className="px-6 py-4 text-neutral-300">{log.status}</td>
-                <td className="px-6 py-4 text-neutral-300">{log.eventType}</td>
-                <td className="px-6 py-4 text-neutral-300">{log.client}</td>
-                <td className="max-w-md truncate px-6 py-4 text-neutral-300">{log.requestUrl}</td>
+            {fakeLogs?.map((log) => (
+              <tr key={log?.id} className="border-gray-base border-b last:border-0">
+                <td className="px-6 py-4 text-neutral-300">{log?.date}</td>
+                <td className="px-6 py-4 text-neutral-300">{log?.status}</td>
+                <td className="px-6 py-4 text-neutral-300">{log?.eventType}</td>
+                <td className="px-6 py-4 text-neutral-300">{log?.client}</td>
+                <td className="max-w-md truncate px-6 py-4 text-neutral-300">{log?.requestUrl}</td>
                 <td className="px-4 text-neutral-400">
                   <ChevronRight />
                 </td>

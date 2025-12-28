@@ -9,11 +9,11 @@ type LogView = "access" | "request" | "response" | "other";
 
 export default function LogsTab() {
   const [activeLogView, setActiveLogView] = useState<LogView>("access");
-  const [showResults, setShowResults] = useState(false);
+  const [showResults, setShowResults] = useState<boolean>(false);
 
   const changeLogView = (view: LogView) => {
     setActiveLogView(view);
-    setShowResults(false); // reset results when switching tabs
+    setShowResults(false);
   };
 
   const showLogs = () => {
@@ -68,7 +68,7 @@ export default function LogsTab() {
 
         {/* Filters */}
         {activeLogView === "access" && (
-          <div className="grid gap-4 p-6 sm:grid-cols-2 lg:grid-cols-6">
+          <div className="grid gap-4 py-4 sm:grid-cols-2 sm:p-6 lg:grid-cols-6">
             <TextInput defaultValue="07/10/2025" />
             <TextInput defaultValue="00:00" />
             <TextInput defaultValue="24:00" />
@@ -81,7 +81,7 @@ export default function LogsTab() {
         )}
 
         {activeLogView === "request" && (
-          <div className="grid gap-4 p-6 sm:grid-cols-2 lg:grid-cols-5">
+          <div className="grid gap-4 py-4 sm:grid-cols-2 sm:p-6 lg:grid-cols-5">
             <TextInput defaultValue="07/10/2025" />
             <TextInput defaultValue="00:00" />
             <TextInput defaultValue="24:00" />
@@ -91,7 +91,7 @@ export default function LogsTab() {
         )}
 
         {activeLogView === "response" && (
-          <div className="grid gap-4 p-6 sm:grid-cols-2 lg:grid-cols-5">
+          <div className="grid gap-4 py-4 sm:grid-cols-2 sm:p-6 lg:grid-cols-5">
             <TextInput defaultValue="07/10/2025" />
             <TextInput defaultValue="00:00" />
             <TextInput defaultValue="24:00" />
@@ -101,7 +101,7 @@ export default function LogsTab() {
         )}
 
         {activeLogView === "other" && (
-          <div className="grid gap-4 p-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-4 py-4 sm:grid-cols-2 sm:p-6 lg:grid-cols-4">
             <TextInput defaultValue="07/10/2025" />
             <TextInput defaultValue="00:00" />
             <TextInput defaultValue="24:00" />
