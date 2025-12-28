@@ -51,7 +51,7 @@ export default function GTMTabs() {
               <SecondaryButton
                 key={tab.key}
                 onClick={changeActiveTab.bind(null, tab.key)}
-                className={`h-11 w-34 cursor-pointer rounded-xl bg-transparent px-6 text-sm transition-all ${
+                className={`h-11 w-full cursor-pointer rounded-xl bg-transparent px-6 text-sm transition-all sm:w-34 ${
                   isActive
                     ? "bg-white text-black shadow-lg"
                     : "bg-[#0F1117] text-neutral-400 hover:text-white"
