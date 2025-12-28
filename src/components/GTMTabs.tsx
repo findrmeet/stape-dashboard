@@ -6,6 +6,7 @@ import AnalyticsTab from "./AnalyticsTab";
 import LogsTab from "./LogsTab";
 import StoreTab from "./StoreTab";
 import ConnectionsTab from "./ConnectionsTab/ConnectionsTab";
+import UsageTabHeader from "./UsageTab/UsageTabHeader";
 
 type TabKey =
   | "details"
@@ -75,7 +76,7 @@ export default function GTMTabs() {
         {activeTab === "monitoring" && <div>Monitoring Content</div>}
         {activeTab === "store" && <StoreTab />}
         {activeTab === "connections" && <ConnectionsTab />}
-        {activeTab === "uses" && <div>Uses Content</div>}
+        {activeTab === "uses" && <UsageTabHeader used={1899} total={10000} />}
       </div>
     </section>
   );
