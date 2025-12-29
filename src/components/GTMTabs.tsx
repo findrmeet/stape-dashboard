@@ -5,6 +5,7 @@ import LogsTab from "./LogsTab";
 import StoreTab from "./StoreTab";
 import ConnectionsTab from "./ConnectionsTab/ConnectionsTab";
 import UsageTabHeader from "./UsageTab/UsageTabHeader";
+import SubscriptionInfo from "./SubscriptionTab/SubscriptionInfo";
 
 type TabKey =
   | "details"
@@ -73,7 +74,7 @@ export default function GTMTabs() {
         {activeTab === "domain" && <div>...</div>}
         {activeTab === "powerups" && <div>...</div>}
         {activeTab === "analytics" && <AnalyticsTab />}
-        {activeTab === "subscription" && <div>Subscription Content</div>}
+        {activeTab === "subscription" && <SubscriptionInfo />}
         {activeTab === "logs" && <LogsTab />}
         {activeTab === "monitoring" && <div>Monitoring Content</div>}
         {activeTab === "store" && <StoreTab />}
