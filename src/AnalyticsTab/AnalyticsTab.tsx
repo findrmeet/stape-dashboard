@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
-import SecondaryButton from "./SecondaryButton";
+import SecondaryButton from "../components/SecondaryButton";
 import Dropdown from "../form/Dropdown";
-import { CustomTooltip } from "./CustomTooltip";
+import { CustomTooltip } from "../components/CustomTooltip";
 
 const data = [
   { day: "1", recovered: 0.65, blocked: 0.45 },

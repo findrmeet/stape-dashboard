@@ -1,6 +1,6 @@
 import { useState } from "react";
 import SecondaryButton from "./SecondaryButton";
-import AnalyticsTab from "./AnalyticsTab";
+import AnalyticsTab from "../AnalyticsTab/AnalyticsTab";
 import LogsTab from "./LogsTab";
 import StoreTab from "./StoreTab";
 import ConnectionsTab from "./ConnectionsTab/ConnectionsTab";
