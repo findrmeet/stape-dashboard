@@ -1,4 +1,4 @@
-import { CreditCard, ChevronDown } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import { Row } from "./Row";
 import { Toggle } from "./Toggle";
 
@@ -12,6 +12,9 @@ import {
   Tooltip,
   Legend,
 } from "recharts";
+import SecondaryButton from "../SecondaryButton";
+import PrimaryButton from "../PrimaryButton";
+import { GradientWallet } from "./GradientWallet";
 
 /* -----------------------------
    Fake Data
@@ -36,67 +39,71 @@ const data = [
 
 export default function SubscriptionInfo() {
   return (
-    <div className="w-full space-y-8">
+    <div className="w-full space-y-8 text-neutral-500">
+      {/* Top notice */}
+      <div className="primary-card text-sm">
+        <p>
+          Please hold on, we need some time to collect the data after you enable Analytics. <br />
+          This process can take up to 48 hours.
+        </p>
+      </div>
       {/* Top Card */}
-      <div className="flex w-full gap-8 rounded-2xl border border-[#1B1E26] bg-[#0B0D12] p-8 shadow-xl">
+      <div className="primary-card flex w-full flex-col gap-8 rounded-2xl p-6 shadow-xl md:flex-row md:p-8">
         {/* Left Section */}
         <div className="flex-1 space-y-6">
           <div>
             <h1 className="text-3xl font-semibold text-white">500,000</h1>
-            <p className="mt-1 text-sm text-[#9CA3AF]">requests per month on Pro plan</p>
+            <p className="mt-1 text-sm">requests per month on Pro plan</p>
           </div>
 
-          <div className="divide-y divide-[#1F2430] rounded-xl border border-[#1F2430] bg-[#0F1117]">
+          <div className="primary-card divide-y divide-dashed divide-[#1F2430] rounded-xl">
             <Row label="Billing cycle renews in" value="28 days" />
             <Row label="Next payment" value="$20 + $4 tax" />
 
-            <div className="flex items-center justify-between p-4">
-              <span className="text-sm text-[#9CA3AF]">
-                Upgrade container to the next tier automatically
-              </span>
-              <Toggle />
+            <div className="flex gap-4 p-4">
+              <Toggle
+                defaultOn
+                onChange={(value) => {
+                  console.log("Auto upgrade:", value);
+                }}
+              />
+              <span className="text-sm">Upgrade container to the next tier automatically</span>
             </div>
           </div>
         </div>
 
         {/* Right Section */}
-        <div className="flex w-[360px] flex-col justify-between rounded-2xl border border-[#1F2430] bg-[#0F1117] p-6">
-          <div className="space-y-4">
-            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#141823]">
-              <CreditCard className="text-white" size={22} />
-            </div>
-
+        <div className="primary-card flex flex-1 flex-col justify-center rounded-2xl p-6">
+          <div className="flex items-center gap-4">
+            <GradientWallet />
             <div>
               <h2 className="text-xl font-semibold text-white">Get 2 months for free!</h2>
-              <p className="mt-1 text-sm text-[#9CA3AF]">Pay annually and get two months free</p>
+              <p className="mt-1 mb-6 text-sm">Pay annually and get two months free</p>
+              <SecondaryButton className="w-56 cursor-pointer rounded-xl bg-white px-6 text-sm text-black shadow-lg hover:bg-neutral-200">
+                View Details
+              </SecondaryButton>
             </div>
-
-            <button className="mt-2 w-full rounded-xl bg-[#EEF2FF] py-2.5 text-sm font-medium text-[#111827] transition hover:opacity-90">
-              View details
-            </button>
           </div>
 
           <div className="flex items-center justify-between pt-6">
             <div>
               <p className="text-sm font-medium text-white">Invoices</p>
-              <p className="text-xs text-[#9CA3AF]">View your payment history</p>
+              <p className="text-xs">View your payment history</p>
             </div>
 
-            <button className="rounded-lg border border-[#1F2430] px-4 py-2 text-sm text-white transition hover:bg-[#151923]">
-              View billing history
-            </button>
+            <PrimaryButton className="px-4 py-2"> View billing history</PrimaryButton>
           </div>
         </div>
       </div>
 
       {/* Usage Graph */}
-      <div className="rounded-2xl border border-[#1B1E26] bg-[#0B0D12] p-6">
+      <div className="primary-card rounded-2xl p-6">
         <div className="mb-4 flex items-center justify-between">
           <p className="text-sm font-medium text-white">
             Available requests this month left: <span className="text-white">462,300</span>
           </p>
 
-          <button className="flex items-center gap-2 rounded-xl border border-[#1F2430] bg-[#0F1117] px-4 py-2 text-sm text-[#9CA3AF]">
+          <button className="flex items-center gap-2 rounded-xl border border-[#1F2430] bg-[#0F1117] px-4 py-2 text-sm">
             Select domain <ChevronDown size={16} />
           </button>
         </div>
