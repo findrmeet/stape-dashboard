@@ -3,9 +3,8 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import { createBrowserRouter } from "react-router";
 import { RouterProvider } from "react-router/dom";
-
 import Layout from "./layout/Layout.tsx";
-import GTMTabs from "./components/GTMTabs.tsx";
+import PricingPage from "./pages/PricingPage/PricingPage.tsx";
 
 const router = createBrowserRouter([
   {
@@ -14,7 +13,7 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <GTMTabs />,
+        element: <PricingPage />,
       },
     ],
   },
